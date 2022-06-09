@@ -36,6 +36,7 @@ public class Category implements Serializable {
                 '}';
     }
 
+
     public static ArrayList<Category> getCategoryData() {
         ArrayList<Category> categories = new ArrayList<>();
         categories.add(new Category("https://cdn.pixabay.com/photo/2017/08/08/09/44/food-photography-2610863_960_720.jpg", "밥"));
