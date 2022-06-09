@@ -42,7 +42,7 @@ public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.MyViewHolder
         Store store = list.get(position);
 
         Glide.with(context)
-                .load(store.getImage())
+                .load(store.getImgurl())
                 .centerCrop()
                 .transform(new CenterCrop())
                 .into(holder.storeImage);

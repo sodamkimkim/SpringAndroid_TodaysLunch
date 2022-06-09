@@ -8,7 +8,6 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import com.example.project.Fragment1;
 import com.example.project.Fragment2;
 import com.example.project.Fragment3;
-import com.example.project.Fragment4;
 import com.example.project.MainActivity;
 import com.example.project.SearchFragment;
 

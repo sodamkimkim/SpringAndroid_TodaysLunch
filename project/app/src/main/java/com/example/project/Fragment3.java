@@ -42,14 +42,14 @@ public class Fragment3 extends Fragment {
                              Bundle savedInstanceState) {
 
 
-        StoreAdapter storeAdapter = new StoreAdapter(Store.getStoreData(), getActivity());
+//        StoreAdapter storeAdapter = new StoreAdapter(Store.getStoreData(), getActivity());
 
         ViewGroup rootview = (ViewGroup) inflater.inflate(R.layout.fragment_3, container, false);
 
-        RecyclerView recyclerView = (RecyclerView) rootview.findViewById(R.id.recyclerView3);
-        recyclerView.setAdapter(storeAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        recyclerView.hasFixedSize();
+//        RecyclerView recyclerView = (RecyclerView) rootview.findViewById(R.id.recyclerView3);
+//        recyclerView.setAdapter(storeAdapter);
+//        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+//        recyclerView.hasFixedSize();
 
 
         return rootview;

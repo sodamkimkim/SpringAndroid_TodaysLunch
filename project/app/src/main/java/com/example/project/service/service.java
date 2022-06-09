@@ -15,8 +15,8 @@ public interface service {
             .build();
 
 
-    @GET("foods")
-    Call<> get()
+//    @GET("foods")
+//    Call<> get()
 
 
 }
