@@ -75,6 +75,7 @@ public class Food implements Serializable {
         foods.add(new Food("https://cdn.pixabay.com/photo/2016/08/23/08/53/tacos-1613795_960_720.jpg", "타코"));
         return foods;
     }
+
     public static ArrayList<Food> getFoodData3() {
         ArrayList<Food> foods = new ArrayList<>();
         foods.add(new Food("https://cdn.pixabay.com/photo/2014/09/24/09/30/seafood-458853_960_720.jpg", "칼국수"));
@@ -84,6 +85,7 @@ public class Food implements Serializable {
         foods.add(new Food("https://cdn.pixabay.com/photo/2016/09/23/23/23/restaurant-1690696_960_720.jpg", "돈까스"));
         return foods;
     }
+
     public static ArrayList<Food> getFoodData4() {
         ArrayList<Food> foods = new ArrayList<>();
         foods.add(new Food("https://cdn.pixabay.com/photo/2014/09/24/09/30/seafood-458853_960_720.jpg", "칼국수"));
@@ -92,6 +94,7 @@ public class Food implements Serializable {
         foods.add(new Food("https://cdn.pixabay.com/photo/2015/07/08/19/40/food-836806_960_720.jpg", "해장국"));
         return foods;
     }
+
     public static ArrayList<Food> getFoodData5() { // 분식
         ArrayList<Food> foods = new ArrayList<>();
         foods.add(new Food("https://cdn.pixabay.com/photo/2014/09/24/09/30/seafood-458853_960_720.jpg", "칼국수"));
@@ -100,12 +103,14 @@ public class Food implements Serializable {
         foods.add(new Food("https://cdn.pixabay.com/photo/2017/06/11/17/03/dumplings-2392893_960_720.jpg", "만두"));
         return foods;
     }
+
     public static ArrayList<Food> getFoodData6() { // 다이어트
         ArrayList<Food> foods = new ArrayList<>();
         foods.add(new Food("https://cdn.pixabay.com/photo/2017/03/10/13/49/fast-food-2132863_960_720.jpg", "샌드위치"));
         foods.add(new Food("https://cdn.pixabay.com/photo/2016/09/15/19/24/salad-1672505_960_720.jpg", "샐러드"));
         return foods;
     }
+
     public static ArrayList<Food> getFoodData7() { // 간편식
         ArrayList<Food> foods = new ArrayList<>();
         foods.add(new Food("https://cdn.pixabay.com/photo/2016/02/28/07/47/kim-rice-1226569_960_720.jpg", "김밥"));
@@ -114,6 +119,7 @@ public class Food implements Serializable {
         foods.add(new Food("https://cdn.pixabay.com/photo/2020/03/21/11/17/burger-4953465_960_720.jpg", "햄버거"));
         return foods;
     }
+
     public static ArrayList<Food> getFoodData8() { // 다른나라
         ArrayList<Food> foods = new ArrayList<>();
         foods.add(new Food("https://cdn.pixabay.com/photo/2020/06/02/12/20/soup-5250765_960_720.jpg", "쌀국수"));
@@ -122,11 +128,12 @@ public class Food implements Serializable {
         foods.add(new Food("https://cdn.pixabay.com/photo/2018/07/18/19/12/pasta-3547078_960_720.jpg", "파스타"));
         return foods;
     }
+
     public static ArrayList<Food> getFoodData9() { // 계절요리
         ArrayList<Food> foods = new ArrayList<>();
         foods.add(new Food("https://cdn.pixabay.com/photo/2018/06/04/13/36/cold-noodles-3453218_960_720.jpg", "냉면"));
         foods.add(new Food("https://cdn.pixabay.com/photo/2021/06/06/09/49/kongguksu-6314887_960_720.jpg", "콩국수"));
-        
+
         return foods;
     }
 }

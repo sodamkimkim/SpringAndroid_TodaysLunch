@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 
 import com.example.project.adapter.CategoryAdapter;
 import com.example.project.adapter.StoreAdapter;
+import com.example.project.databinding.Fragment3Binding;
 import com.example.project.interfaces.OnCategoryItemClickListener;
 import com.example.project.models.Category;
 import com.example.project.models.Store;
@@ -20,6 +21,7 @@ import com.example.project.models.Store;
 
 public class Fragment3 extends Fragment {
 
+    Fragment3Binding fragment3Binding;
 
     public Fragment3() {
         // Required empty public constructor
@@ -44,14 +46,12 @@ public class Fragment3 extends Fragment {
 
 //        StoreAdapter storeAdapter = new StoreAdapter(Store.getStoreData(), getActivity());
 
-        ViewGroup rootview = (ViewGroup) inflater.inflate(R.layout.fragment_3, container, false);
+        fragment3Binding = Fragment3Binding.inflate(inflater, container, false);
 
-//        RecyclerView recyclerView = (RecyclerView) rootview.findViewById(R.id.recyclerView3);
-//        recyclerView.setAdapter(storeAdapter);
-//        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-//        recyclerView.hasFixedSize();
+        RecyclerView recyclerView = fragment3Binding.recyclerView3;
 
 
-        return rootview;
+
+        return fragment3Binding.getRoot();
     }
 }

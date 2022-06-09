@@ -16,6 +16,5 @@ public class Food {
 	private String url;
     private List<String> category;
     private List<Store> storelist;
-   
     
 }

@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.project.adapter.CategoryAdapter;
+import com.example.project.databinding.Fragment1Binding;
 import com.example.project.interfaces.OnCategoryItemClickListener;
 import com.example.project.models.Category;
 
@@ -20,7 +21,7 @@ import java.util.ArrayList;
 
 public class Fragment1 extends Fragment {
 
-
+    Fragment1Binding fragment1Binding;
 
     public Fragment1() {
     }
@@ -55,15 +56,15 @@ public class Fragment1 extends Fragment {
             }
         });
 
-        ViewGroup rootview = (ViewGroup)inflater.inflate(R.layout.fragment_1, container, false);
+        fragment1Binding = Fragment1Binding.inflate(inflater, container, false);
 
-        RecyclerView recyclerView = (RecyclerView)rootview.findViewById(R.id.recyclerView1);
+
+        RecyclerView recyclerView = fragment1Binding.recyclerView1;
         recyclerView.setAdapter(categoryAdapter);
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(),2));
         recyclerView.hasFixedSize();
 
 
-
-        return rootview;
+        return fragment1Binding.getRoot();
     }
 }

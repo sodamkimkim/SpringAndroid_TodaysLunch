@@ -8,9 +8,13 @@ import android.widget.Button;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.project.databinding.Fragment2Binding;
 
 public class Fragment2 extends Fragment implements View.OnClickListener {
 
+    Fragment2Binding fragment2Binding;
 
     public Fragment2() {
         // Required empty public constructor
@@ -41,40 +45,39 @@ public class Fragment2 extends Fragment implements View.OnClickListener {
 //            }
 //        });
 
-        ViewGroup rootview = (ViewGroup) inflater.inflate(R.layout.fragment_2, container, false);
 
+        fragment2Binding = Fragment2Binding.inflate(inflater, container, false);
 
-        Button btn1AllMenu = (Button) rootview.findViewById(R.id.btn1AllMenu);
+        Button btn1AllMenu = fragment2Binding.btn1AllMenu;
         btn1AllMenu.setOnClickListener(this);
-        Button btn2Rice = (Button) rootview.findViewById(R.id.btn2Rice);
+        Button btn2Rice = fragment2Binding.btn2Rice;
         btn2Rice.setOnClickListener(this);
-        Button btn3Noddle = (Button) rootview.findViewById(R.id.btn3Noddle);
+        Button btn3Noddle = fragment2Binding.btn3Noddle;
         btn3Noddle.setOnClickListener(this);
-        Button btn4Soup = (Button) rootview.findViewById(R.id.btn4Soup);
+        Button btn4Soup = fragment2Binding.btn4Soup;
         btn4Soup.setOnClickListener(this);
-        Button btn5Bunsig = (Button) rootview.findViewById(R.id.btn5Bunsig);
+        Button btn5Bunsig = fragment2Binding.btn5Bunsig;
         btn5Bunsig.setOnClickListener(this);
-        Button btn6Dietary = (Button) rootview.findViewById(R.id.btn6Dietary);
+        Button btn6Dietary = fragment2Binding.btn6Dietary;
         btn6Dietary.setOnClickListener(this);
-        Button btn7Instant = (Button) rootview.findViewById(R.id.btn7Instant);
+        Button btn7Instant = fragment2Binding.btn7Instant;
         btn7Instant.setOnClickListener(this);
-        Button btn8Overseas = (Button) rootview.findViewById(R.id.btn8Overseas);
+        Button btn8Overseas = fragment2Binding.btn8Overseas;
         btn8Overseas.setOnClickListener(this);
-        Button btn9Seasoned = (Button) rootview.findViewById(R.id.btn9Seasoned);
+        Button btn9Seasoned = fragment2Binding.btn9Seasoned;
         btn9Seasoned.setOnClickListener(this);
-//        RecyclerView recyclerView = (RecyclerView) rootview.findViewById(R.id.recyclerView2);
-//        recyclerView.setAdapter(foodAdapter);
-//        recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
-//        recyclerView.hasFixedSize();
-btn1AllMenu.performClick();
-        return rootview;
+
+        btn1AllMenu.performClick();
+
+
+        return fragment2Binding.getRoot();
     }
 
 
     @Override
     public void onClick(View v) {
         Fragment childFragment;
-        switch(v.getId()){
+        switch (v.getId()) {
             case R.id.btn1AllMenu:
                 childFragment = new ChildFragment1().newInstance();
                 setChildFragment(childFragment);
@@ -123,12 +126,12 @@ btn1AllMenu.performClick();
         }
     }
 
-    private void setChildFragment(Fragment childFragment){
+    private void setChildFragment(Fragment childFragment) {
         FragmentTransaction childFragmentTransaction = getChildFragmentManager().beginTransaction();
 
-            childFragmentTransaction.replace(R.id.childFragmentContainer,childFragment);
-            childFragmentTransaction.addToBackStack(null);
-            childFragmentTransaction.commit();
+        childFragmentTransaction.replace(R.id.childFragmentContainer, childFragment);
+        childFragmentTransaction.addToBackStack(null);
+        childFragmentTransaction.commit();
 
     }
 }
