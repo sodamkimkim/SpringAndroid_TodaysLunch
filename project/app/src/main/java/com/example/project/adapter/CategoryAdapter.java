@@ -59,11 +59,12 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
 
     @Override
     public int getItemCount() {
-        return list.size();    }
+        return list.size();
+    }
 
     // 내부클래스
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        //findviewbyid재활용해서 사용하기 위해서 만든 viewHolder
+
         private ImageView categoryTumbnail;
         private TextView categoryTitle;
 

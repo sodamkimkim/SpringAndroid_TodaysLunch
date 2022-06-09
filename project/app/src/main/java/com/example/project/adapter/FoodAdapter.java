@@ -48,6 +48,7 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.MyViewHolder2>
         // BindViewHolder(화면과 연결)
         // data mapping
         Log.d("TAG", "position: " + position);
+
         Food food = list.get(position);
         Glide.with(context)
                 .load(food.getThumbnail())
