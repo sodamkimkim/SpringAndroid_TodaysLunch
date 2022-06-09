@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     public static Context context;
     public static final int TAB_COUNT = 4;
-    private static final String TAB_NAME[] = {"카테고리 별 보기", "전체 메뉴 보기", "가까운 가게 보기", "정보 수정"};
+    private static final String TAB_NAME[] = {"랜덤 가게 뽑기", "카테고리 별 메뉴 보기", "가까운 가게 보기", "정보 수정"};
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private FragmentAdapter adapter;
