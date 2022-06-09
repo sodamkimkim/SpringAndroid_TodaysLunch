@@ -1,0 +1,11 @@
+package com.example.todaylunch.dto;
+
+import lombok.Builder;
+import lombok.Data;
+
+@Data
+public class Store {
+	private String path;
+    private String storeName;
+    private double distance;
+}

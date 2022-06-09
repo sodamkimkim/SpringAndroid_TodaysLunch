@@ -1,0 +1,5 @@
+package com.example.todaylunch.dto;
+
+public class Error {
+
+}

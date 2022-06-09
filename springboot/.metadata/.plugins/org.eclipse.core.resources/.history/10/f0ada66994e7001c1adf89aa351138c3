@@ -1,0 +1,27 @@
+package com.example.todaylunch.advice;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+import com.example.todaylunch.dto.ErrorDto;
+
+@RestControllerAdvice
+public class foodControllerAdvice {
+	
+	@ExceptionHandler(value = Exception.class)
+	public ResponseEntity<?> exception(Exception e){
+		List<ErrorDto> list = new ArrayList<ErrorDto>();
+		ErrorDto errorDto = new ErrorDto();
+		errorDto.setField(e.getClass().toString());
+		errorDto.setMessage(e.getMessage());
+		list.add(errorDto);
+		return ResponseEntity.status(HttpStatus.CONFLICT).body(list);
+	}
+
+}
