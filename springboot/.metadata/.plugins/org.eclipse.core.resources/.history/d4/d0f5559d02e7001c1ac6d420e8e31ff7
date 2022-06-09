@@ -1,0 +1,30 @@
+package com.example.todaylunch.dto;
+
+import java.util.List;
+
+import lombok.Data;
+
+@Data
+public class Food {
+	private String url;
+    private String foodName;
+    private List<String> category;
+    private List<Store> storeName;
+    
+    private Food(Builder builder) {
+    	this.url = builder.url;
+    	this.foodName = builder.foodName;
+    	this.category = builder.category;
+    	this.storeName = builder.category;
+    }
+    
+    
+    class Builder {
+    	private String url;
+        private String foodName;
+        private List<String> category;
+        private List<Store> storeName;
+        
+        
+    }
+}

@@ -1,0 +1,13 @@
+package com.example.todaylunch.dto;
+
+import java.util.List;
+
+import lombok.Data;
+
+@Data
+public class Food {
+	private String url;
+    private String foodName;
+    private List<String> category;
+    private List<Store> storeName;
+}

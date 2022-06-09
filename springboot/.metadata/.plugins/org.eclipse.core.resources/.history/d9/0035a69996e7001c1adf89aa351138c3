@@ -1,0 +1,50 @@
+package com.example.todaylunch.advice;
+
+import javax.validation.UnexpectedTypeException;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.MissingServletRequestParameterException;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+import com.example.todaylunch.dto.ErrorDto;
+
+@RestControllerAdvice
+public class foodControllerAdvice {
+	
+	@ExceptionHandler(value = Exception.class)
+	public ResponseEntity<?> exception(Exception e){
+		ErrorDto errorDto = new ErrorDto();
+		errorDto.setField(spiltText(e));
+		errorDto.setMessage(e.getMessage());
+		return ResponseEntity.status(HttpStatus.CONFLICT).body(errorDto);
+	}
+	
+	@ExceptionHandler(value = UnexpectedTypeException.class)
+	public ErrorDto exception(UnexpectedTypeException e){
+		ErrorDto errorDto = new ErrorDto();
+		errorDto.setField(spiltText(e));
+		errorDto.setMessage(e.getMessage());
+		return errorDto;
+	}
+	
+	@ExceptionHandler(value = MissingServletRequestParameterException.class)
+	public ResponseEntity<?> missExcption(MissingServletRequestParameterException e){
+		System.out.println("MissingServletRequestParameterException 발생");
+		ErrorDto errorDto = new ErrorDto();
+		errorDto.setField(spiltText(e));
+		errorDto.setMessage(e.getMessage());
+		
+		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorDto);
+	}
+	
+	private String spiltText(Object object) {
+		String[] temp = object.getClass().toString().split("[.]");
+		return temp[temp.length];
+	}
+	
+	
+	
+	
+}

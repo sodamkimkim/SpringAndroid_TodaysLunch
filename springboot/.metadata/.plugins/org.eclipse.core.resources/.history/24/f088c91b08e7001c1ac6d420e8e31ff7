@@ -1,0 +1,5 @@
+package com.example.todaylunch.data;
+
+public enum CategoryList {
+	NOODLE, RICE, SOUP, BUNSIG, INSTANT, SEASONFOOD
+}

@@ -1,0 +1,75 @@
+package com.example.todaylunch.dto;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import lombok.Data;
+
+@Data
+public class Food {
+	private String url;
+    private String foodName;
+    private List<String> category;
+    private List<Store> storelist;
+    
+    private Food(Builder builder) {
+    	this.url = builder.url;
+    	this.foodName = builder.foodName;
+    	this.category = builder.category;
+    	this.storelist = builder.storelist;
+    }
+    
+    
+    class Builder {
+    	private String url;
+        private String foodName;
+        private List<String> category;
+        private List<Store> storelist;
+        
+        public Builder() {
+        	
+        }
+        
+        public Builder url(String url) {
+        	this.url = url;
+        	return this;
+        }
+        
+        public Builder foodName(String foodName) {
+        	this.foodName = foodName;
+        	return this;
+        }
+        
+        public Builder putCategory(String category) {
+        	if(this.category.size() == 0) {
+        		this.category = new ArrayList<String>();
+        		this.category.add(category);
+        	}else {
+        		this.category.add(category);
+        	}
+        	return this;
+        }
+        
+        public Builder category(List<String> category) {
+        	this.category = category;
+        	return this;
+        }
+        
+        public Builder putStore(Store store) {
+        	if(this.storelist.size() == 0) {
+        		this.storelist = new ArrayList<Store>();
+        		this.storelist.add(store);
+        	}else {
+        		this.storelist.add(store);
+        	}
+        	return this;
+        }
+        
+        public Builder storelist(List<Store> storelist) {
+        	this.storeName = category;
+        	return this;
+        }
+        
+        
+    }
+}

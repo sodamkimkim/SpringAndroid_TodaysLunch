@@ -1,0 +1,6 @@
+package com.example.todaylunch.dto;
+
+public class ErrorDto {
+	private String field;
+	private String message;
+}
