@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:paddingTop="10dp"
+        android:background="#8C8A8A"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_margin="2dp"
+            android:id="@+id/storeNameField"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="store Name">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/storeName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_margin="2dp"
+            android:id="@+id/storeUrlField"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="store img url">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/storeUrl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_margin="2dp"
+            android:id="@+id/storeAddressField"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="store Address">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/storeAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_margin="2dp"
+            android:id="@+id/storeDistanceField"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="store distance">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/storeDistance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

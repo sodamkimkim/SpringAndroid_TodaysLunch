@@ -6,7 +6,8 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class Store {
-	private String path;
-    private String storeName;
+	private String storeName;
+	private String address;
+	private String Imgurl;
     private double distance;
 }
