@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.todaylunch.dto.ErrorDto;
 import com.example.todaylunch.dto.Food;
 import com.example.todaylunch.dto.Store;
 import com.example.todaylunch.service.Service;
@@ -45,7 +46,10 @@ public class foodController {
 	public ResponseEntity<?> food(@NotEmpty @RequestParam String foodName) {	
 		Food food = service.findFood(foodName);
 		if(food == null) {
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("해당하신 음식은 존재하지 않습니다");
+			ErrorDto error = new ErrorDto();
+			error.setField("CantFindFood");
+			error.setMessage("이름을 잘못 입력하셨거나, 해당하신 음식은 존재하지 않습니다");
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
 		}
 		return ResponseEntity.status(HttpStatus.OK).body(food);
 	}
