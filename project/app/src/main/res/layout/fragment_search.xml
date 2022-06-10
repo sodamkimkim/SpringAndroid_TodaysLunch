@@ -9,7 +9,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="30dp"
+        android:layout_margin="10dp"
         android:background="#33D1D1D3">
 
         <com.google.android.material.textfield.TextInputLayout
@@ -17,7 +17,7 @@
             android:layout_width="200dp"
             android:layout_height="50dp"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:hint="음식 검색"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -37,11 +37,14 @@
             android:text="search"
             android:textColor="@color/SearchTextColor"
             app:layout_constraintStart_toEndOf="@id/textField"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/textField" />
 
         <LinearLayout
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
             android:id="@+id/categoryField"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:orientation="vertical"
@@ -78,7 +81,6 @@
 
                 <CheckBox
                     android:id="@+id/checkNoodle"
-
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="25dp"
@@ -141,14 +143,13 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
 
-        <de.hdodenhof.circleimageview.CircleImageView
+        <ImageView
+            android:scaleType="fitXY"
             android:id="@+id/showUrlImg"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
-            app:civ_border_color="@color/SearchTextColor"
-            app:civ_border_width="2dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/categoryField"
             tools:src="@drawable/dietary" />
@@ -163,8 +164,8 @@
             app:layout_constraintEnd_toEndOf="@id/categoryField"
             app:layout_constraintStart_toEndOf="@id/showUrlImg"
             app:layout_constraintTop_toTopOf="@id/showUrlImg"
-            app:endIconDrawable="@drawable/ic_baseline_slideshow_24"
-            app:endIconMode="custom">
+            app:startIconDrawable="@drawable/ic_baseline_slideshow_24"
+            app:endIconMode="clear_text">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/urlText"
@@ -178,25 +179,49 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/showUrlImg"
             app:civ_border_width="1dp"
-            android:src="@drawable/ic_baseline_plus_one_24"
+            android:src="@drawable/ic_baseline_add_24"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/storeEditFleid"
             android:background="#7BBFBCBC"
             android:layout_marginTop="5dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/submitbtn"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/addStoreInput"
             android:layout_width="match_parent"
             android:layout_height="0dp"/>
 
+        <Button
+            android:layout_marginBottom="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@color/SearchTextColor"
+            android:textSize="13dp"
+            android:text="submit"
+            app:layout_constraintTop_toBottomOf="@id/storeEditFleid"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/deletbtn"
+            android:id="@+id/submitbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="false"/>
+        <Button
+            android:text="delete"
+            android:textSize="13dp"
+            android:textColor="@color/SearchTextColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/submitbtn"
+            app:layout_constraintTop_toTopOf="@id/submitbtn"
+            android:id="@+id/deletbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="false"/>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 </LinearLayout>

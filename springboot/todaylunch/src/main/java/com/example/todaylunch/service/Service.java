@@ -53,7 +53,7 @@ public class Service {
 	public void sampledate() {
 		ArrayList<String> list = new ArrayList<String>();
 		list.add(CategoryType.NOODLE.toString());
-		list.add(CategoryType.SEASONFOOD.toString());
+		list.add(CategoryType.SEASON.toString());
 		
 		ArrayList<String> list2 = new ArrayList<String>();
 		list2.add(CategoryType.RICE.toString());
@@ -61,10 +61,10 @@ public class Service {
 		
 		ArrayList<String> list3 = new ArrayList<String>();
 		list3.add(CategoryType.INSTANT.toString());
-		list3.add(CategoryType.DIETFOOD.toString());
+		list3.add(CategoryType.DIET.toString());
 		
 		ArrayList<String> list4 = new ArrayList<String>();
-		list4.add(CategoryType.DIETFOOD.toString());
+		list4.add(CategoryType.DIET.toString());
 		list4.add(CategoryType.INSTANT.toString());
 		
 		ArrayList<String> list5 = new ArrayList<String>();
@@ -139,7 +139,9 @@ public class Service {
 	 */
 	private void addFood(Food food) {
 		food.getStorelist().forEach(store -> {
-			storeList.add(store);
+			if(!(storeList.contains(store))) {
+				storeList.add(store);
+			}		
 		});
 		foodList.add(food);
 	}
