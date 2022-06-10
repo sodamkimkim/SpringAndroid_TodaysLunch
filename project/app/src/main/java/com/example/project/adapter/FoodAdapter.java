@@ -18,16 +18,16 @@ import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.example.project.R;
 import com.example.project.interfaces.OnFoodItemClickListener;
-import com.example.project.models.Food;
+import com.example.project.models.FoodSample;
 
 import java.util.ArrayList;
 
 public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.MyViewHolder2>{
-    ArrayList<Food> list;
+    ArrayList<FoodSample> list;
     Context context;
     OnFoodItemClickListener onFoodItemClickListener;
 
-    public FoodAdapter(ArrayList<Food> list, Context context, OnFoodItemClickListener onFoodItemClickListener) {
+    public FoodAdapter(ArrayList<FoodSample> list, Context context, OnFoodItemClickListener onFoodItemClickListener) {
         this.list = list;
         this.context = context;
         this.onFoodItemClickListener = onFoodItemClickListener;
@@ -47,13 +47,13 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.MyViewHolder2>
         // BindViewHolder(화면과 연결)
         // data mapping
         Log.d("TAG", "position: " + position);
-        Food food = list.get(position);
+        FoodSample foodSample = list.get(position);
         Glide.with(context)
-                .load(food.getThumbnail())
+                .load(foodSample.getThumbnail())
                 .centerCrop()
                 .transform(new CenterCrop(),new RoundedCorners(10))
                 .into(holder.foodImageView);
-        holder.foodTextView.setText(food.getTitle());
+        holder.foodTextView.setText(foodSample.getTitle());
 
     }
 

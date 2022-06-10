@@ -1,5 +1,7 @@
 package com.example.project.service;
 
+import com.example.project.models.Food;
+import com.example.project.models.FoodSample;
 import com.example.project.models.Store;
 
 import java.util.List;
@@ -20,5 +22,8 @@ public interface Service {
 
     @GET("stores")
     Call<List<Store>> get(@Query("limit") int limit);
+
+    @GET("food")
+    Call<Food> loadFood(@Query("foodName")String foodName);
 
 }

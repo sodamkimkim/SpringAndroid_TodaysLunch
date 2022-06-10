@@ -4,11 +4,19 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Store {
-
+    private int id;
     private String storeName;
     private String address;
     private String imgurl;
     private int distance;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getStoreName() {
         return storeName;

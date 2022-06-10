@@ -46,10 +46,7 @@ public class foodController {
 	public ResponseEntity<?> food(@NotEmpty @RequestParam String foodName) {	
 		Food food = service.findFood(foodName);
 		if(food == null) {
-			ErrorDto error = new ErrorDto();
-			error.setField("CantFindFood");
-			error.setMessage("이름을 잘못 입력하셨거나, 해당하신 음식은 존재하지 않습니다");
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
 		}
 		return ResponseEntity.status(HttpStatus.OK).body(food);
 	}
