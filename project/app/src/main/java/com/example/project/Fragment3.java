@@ -21,7 +21,15 @@ import com.example.project.models.Store;
 
 public class Fragment3 extends Fragment {
 
-    Fragment3Binding fragment3Binding;
+    private Fragment3Binding fragment3Binding;
+
+    private String storeName;
+    private String address;
+    private double distance;
+    private String imgurl;
+
+    private StoreAdapter storeAdapter;
+
 
     public Fragment3() {
         // Required empty public constructor
@@ -48,10 +56,30 @@ public class Fragment3 extends Fragment {
 
         fragment3Binding = Fragment3Binding.inflate(inflater, container, false);
 
-        RecyclerView recyclerView = fragment3Binding.recyclerView3;
+
+
 
 
 
         return fragment3Binding.getRoot();
     }
+
+    private void requestStoresData(int requestPage) {
+
+
+
+
+    }
+
+    private void setupRecyclerView(String storeName, String address, double distance, String imgurl){
+        storeAdapter = new StoreAdapter();
+
+
+    }
+
+
+
+
+
+
 }

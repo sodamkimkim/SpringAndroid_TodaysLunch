@@ -8,13 +8,12 @@ import android.widget.Button;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.project.databinding.Fragment2Binding;
 
 public class Fragment2 extends Fragment implements View.OnClickListener {
 
-    Fragment2Binding fragment2Binding;
+    private Fragment2Binding fragment2Binding;
 
     public Fragment2() {
         // Required empty public constructor
@@ -68,7 +67,6 @@ public class Fragment2 extends Fragment implements View.OnClickListener {
         btn9Seasoned.setOnClickListener(this);
 
         btn1AllMenu.performClick();
-
 
         return fragment2Binding.getRoot();
     }
