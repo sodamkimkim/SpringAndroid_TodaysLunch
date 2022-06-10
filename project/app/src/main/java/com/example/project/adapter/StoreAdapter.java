@@ -24,10 +24,7 @@ public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.MyViewHolder
     ArrayList<Store> list;
     Context context;
 
-    public StoreAdapter(ArrayList<Store> list, Context context) {
-        this.list = list;
-        this.context = context;
-    }
+
 
     @NonNull
     @Override

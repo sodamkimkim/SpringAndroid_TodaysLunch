@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Store {
     private String storeName;
     private String address;
-    private String Imgurl;
+    private String imgurl;
     private double distance;
 
     public String getStoreName() {
@@ -26,11 +26,11 @@ public class Store {
     }
 
     public String getImgurl() {
-        return Imgurl;
+        return imgurl;
     }
 
     public void setImgurl(String imgurl) {
-        Imgurl = imgurl;
+        this.imgurl = imgurl;
     }
 
     public double getDistance() {

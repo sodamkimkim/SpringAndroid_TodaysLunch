@@ -1,11 +1,12 @@
 package com.example.project.service;
 
-import com.example.project.models.Category;
+import com.example.project.models.Store;
 
 import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
+import retrofit2.http.Query;
 
 public interface service {
 
@@ -15,8 +16,7 @@ public interface service {
             .build();
 
 
-//    @GET("foods")
-//    Call<> get()
-
+    @GET("stores")
+    Call<Store> get(@Query("limit") int limit);
 
 }
