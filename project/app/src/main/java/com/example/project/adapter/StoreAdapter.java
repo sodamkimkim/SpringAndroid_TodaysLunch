@@ -14,6 +14,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.example.project.R;
+import com.example.project.interfaces.OnMapItemClickListener;
 import com.example.project.models.Category;
 import com.example.project.models.Store;
 
@@ -23,7 +24,11 @@ import java.util.List;
 public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.MyViewHolder> {
 
     ArrayList<Store> list;
+    private OnMapItemClickListener  onMapItemClickListener;
 
+    public void setOnMapItemClickListener(OnMapItemClickListener onMapItemClickListener){
+        this.onMapItemClickListener =onMapItemClickListener;
+    }
 
     public void addItem(List<Store> stores) {
         list = (ArrayList<Store>) stores;
@@ -43,6 +48,9 @@ public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.MyViewHolder
     public void onBindViewHolder(@NonNull StoreAdapter.MyViewHolder holder, int position) {
         Store store = list.get(position);
         holder.drawStoreList(store);
+        holder.itemView.setOnClickListener(view -> {
+            onMapItemClickListener.selectedItem(store);
+        });
 
     }
 

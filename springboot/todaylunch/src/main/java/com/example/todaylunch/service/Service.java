@@ -85,7 +85,7 @@ public class Service {
 		
 		ArrayList<Store> storeList4 = new ArrayList<Store>();
 		storeList4.add(new Store("서브웨이 서면점", "부산시 진구 서면 중앙대로 690","https://www.newsfc.co.kr/news/photo/201903/35517_26006_224.jpg", 100));
-		storeList4.add(new Store("셀러디 부산서면점", "부산시 진구 중앙대로 668 에이원프라자 1층","https://www.fnnews.com/resource/media/image/2020/09/09/202009091754581993_l.jpg", 0));
+		storeList4.add(new Store("샐러디 부산서면점", "부산시 진구 중앙대로 668 에이원프라자 1층","https://www.fnnews.com/resource/media/image/2020/09/09/202009091754581993_l.jpg", 0));
 		storeList4.add(new Store("투고샐러드 삼정타워점", "부산광역시 부산진구 중앙대로 672 삼정타워 5층 509","http://www.fcmedia.co.kr/news/photo/201704/9097_14140_558.jpg", 40));
 		
 		ArrayList<Store> storeList5 = new ArrayList<Store>();

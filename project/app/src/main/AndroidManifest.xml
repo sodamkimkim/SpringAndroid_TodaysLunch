@@ -17,6 +17,13 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
 
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyARz0wWHimm7uGAOBgX5SgIwQJujN_ySn0" />
+
+        <activity android:name=".StoreMapActivity"
+            android:exported="false"/>
+
         <activity
             android:name=".DetailActivity"
             android:exported="false" />
@@ -31,7 +38,10 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true"/>
+
+
+
     </application>
 
 </manifest>

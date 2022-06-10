@@ -1,5 +1,6 @@
 package com.example.project;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -16,6 +17,7 @@ import com.example.project.adapter.CategoryAdapter;
 import com.example.project.adapter.StoreAdapter;
 import com.example.project.databinding.Fragment3Binding;
 import com.example.project.interfaces.OnCategoryItemClickListener;
+import com.example.project.interfaces.OnMapItemClickListener;
 import com.example.project.models.Category;
 import com.example.project.models.Store;
 import com.example.project.service.Service;
@@ -28,7 +30,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class Fragment3 extends Fragment {
+public class Fragment3 extends Fragment implements OnMapItemClickListener {
 
     private static final String TAG = "TAG";
     private Fragment3Binding fragment3Binding;
@@ -40,16 +42,20 @@ public class Fragment3 extends Fragment {
     List<Store> stores;
 
     private int limit = 10;
+    private OnMapItemClickListener onMapItemClickListener;
 
-    public Fragment3() {
-        // Required empty public constructor
+
+    public Fragment3(OnMapItemClickListener onMapItemClickListener) {
+            this.onMapItemClickListener = onMapItemClickListener;
     }
 
 
-    public static Fragment3 newInstance(String param1, String param2) {
-        Fragment3 fragment = new Fragment3();
-        return fragment;
-    }
+
+
+//    public static Fragment3 getInstance(String param1, String param2) {
+//        Fragment3 fragment = new Fragment3();
+//        return fragment;
+//    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -106,6 +112,7 @@ public class Fragment3 extends Fragment {
 
         storeAdapter = new StoreAdapter();
         storeAdapter.addItem(stores);
+        storeAdapter.setOnMapItemClickListener(this);
 
         LinearLayoutManager manager = new LinearLayoutManager(getContext());
 
@@ -115,7 +122,15 @@ public class Fragment3 extends Fragment {
 
         requestStoresData();
 
+
+
+
     }
 
 
+    @Override
+    public void selectedItem(Store store) {
+        Intent intent = new Intent(getContext(), StoreMapActivity.class);
+        startActivity(intent);
+    }
 }
