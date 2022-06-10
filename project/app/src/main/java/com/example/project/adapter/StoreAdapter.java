@@ -18,32 +18,31 @@ import com.example.project.models.Category;
 import com.example.project.models.Store;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.MyViewHolder> {
 
     ArrayList<Store> list;
-    Context context;
 
 
+    public void addItem(List<Store> stores) {
+        list = (ArrayList<Store>) stores;
+
+        notifyDataSetChanged();
+    }
 
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(context).inflate(R.layout.store, parent, false);
-
+        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+        View itemView = inflater.inflate(R.layout.store, parent, false);
         return new MyViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(@NonNull StoreAdapter.MyViewHolder holder, int position) {
         Store store = list.get(position);
-
-        Glide.with(context)
-                .load(store.getImgurl())
-                .centerCrop()
-                .transform(new CenterCrop())
-                .into(holder.storeImage);
-        holder.storeName.setText(store.getStoreName());
+        holder.drawStoreList(store);
 
     }
 
@@ -52,16 +51,32 @@ public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.MyViewHolder
         return list.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
+    public class MyViewHolder extends RecyclerView.ViewHolder {
 
+        private View view;
         private ImageView storeImage;
-            private TextView storeName;
-
+        private TextView storeName;
+        private TextView distance;
+        private TextView address;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            storeImage = itemView.findViewById(R.id. image);
+            view = itemView;
+            storeImage = itemView.findViewById(R.id.image);
             storeName = itemView.findViewById(R.id.storeName);
+            distance = itemView.findViewById(R.id.distance);
+            address = itemView.findViewById(R.id.address);
+        }
+
+        public void drawStoreList(Store store) {
+            Glide.with(storeImage.getContext())
+                    .load(store.getImgurl())
+                    .centerCrop()
+                    .transform(new CenterCrop())
+                    .into(storeImage);
+            storeName.setText(store.getStoreName());
+            distance.setText(String.valueOf(store.getDistance() + "m"));
+            address.setText(store.getAddress());
         }
 
 

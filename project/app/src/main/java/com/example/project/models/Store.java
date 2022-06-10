@@ -4,10 +4,11 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Store {
+
     private String storeName;
     private String address;
     private String imgurl;
-    private double distance;
+    private int distance;
 
     public String getStoreName() {
         return storeName;
@@ -33,11 +34,11 @@ public class Store {
         this.imgurl = imgurl;
     }
 
-    public double getDistance() {
+    public int getDistance() {
         return distance;
     }
 
-    public void setDistance(double distance) {
+    public void setDistance(int distance) {
         this.distance = distance;
     }
 }

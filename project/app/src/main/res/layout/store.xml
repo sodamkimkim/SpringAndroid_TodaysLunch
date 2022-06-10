@@ -42,34 +42,41 @@
                 android:background="@color/white">
 
                 <TextView
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nanumgothicbold"
                     android:id="@+id/storeName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
+                    android:layout_marginStart="20dp"
                     android:gravity="center_vertical"
                     android:text="가게이름"
-                    android:textSize="20dp"
+                    android:textSize="18dp"
                     app:layout_constraintBottom_toTopOf="@id/distance"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nanumgothicbold"
                     android:id="@+id/distance"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="거리"
-                    android:textSize="16dp"
+                    android:textSize="14dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/storeName"
                     app:layout_constraintTop_toBottomOf="@id/storeName" />
 
                 <TextView
-                    android:id="@id/path"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/address"
+                    android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
                     android:text="클릭시 상세 경로 보기"
-                    android:textSize="16dp"
+                    android:textSize="14dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@id/storeName" />
