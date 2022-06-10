@@ -2,9 +2,11 @@ package com.example.todaylunch.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class Store {
 	private String storeName;
 	private String address;

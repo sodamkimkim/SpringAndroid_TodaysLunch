@@ -14,6 +14,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -48,6 +50,14 @@ public class foodController {
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("해당하신 음식은 존재하지 않습니다");
 		}
 		return ResponseEntity.status(HttpStatus.OK).body(food);
+	}
+	
+	@PostMapping("/food")
+	public ResponseEntity<Food> food(@RequestBody Food food) {
+
+		service.addFood(food);
+		return ResponseEntity.status(HttpStatus.OK).body(food);
+
 	}
 	
 	@GetMapping("/todayfood")
