@@ -276,7 +276,7 @@ public class Service {
 				.url("https://cdn.pixabay.com/photo/2017/08/08/09/44/food-photography-2610863_960_720.jpg")
 				.category(list7).storelist(storeList7).build();
 		Food food8 = new Food().builder().foodName("냉면")
-				.url("https://cdn.pixabay.com/photo/2017/08/08/09/44/food-photography-2610863_960_720.jpg")
+				.url("https://cdn.pixabay.com/photo/2018/06/04/13/36/cold-noodles-3453218_960_720.jpg")
 				.category(list8).storelist(storeList8).build();
 		Food food9 = new Food().builder().foodName("짬뽕")
 				.url("https://cdn.pixabay.com/photo/2018/12/03/01/04/spicy-seafood-3852529_960_720.jpg").category(list9)
@@ -298,21 +298,20 @@ public class Service {
 				.storelist(storeList14).build();
 
 		Food food15 = new Food().builder().foodName("볶음밥")
-				.url("https://cdn.pixabay.com/photo/2018/07/18/19/12/pasta-3547078_960_720.jpg").category(list15)
+				.url("https://cdn.pixabay.com/photo/2019/12/20/17/05/fried-rice-4708866_960_720.jpg").category(list15)
 				.storelist(storeList15).build();
 		Food food16 = new Food().builder().foodName("피자")
 				.url("https://cdn.pixabay.com/photo/2020/06/08/16/49/pizza-5275191_960_720.jpg").category(list16)
 				.storelist(storeList16).build();
 
 		Food food17 = new Food().builder().foodName("해장국")
-				.url("https://cdn.pixabay.com/photo/2020/06/08/16/49/pizza-5275191_960_720.jpg").category(list17)
+				.url("https://cdn.pixabay.com/photo/2015/07/08/19/40/food-836806_960_720.jpg").category(list17)
 				.storelist(storeList17).build();
 
 		addFood(food1);
 		addFood(food2);
 		addFood(food3);
 		addFood(food4);
-		addFood(food5);
 		addFood(food5);
 		addFood(food6);
 		addFood(food7);
