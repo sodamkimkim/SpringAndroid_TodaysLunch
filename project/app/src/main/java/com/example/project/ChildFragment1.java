@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 
+import com.example.project.Define.CategoryType;
 import com.example.project.adapter.FoodAdapter;
 import com.example.project.databinding.FragmentChild1Binding;
 import com.example.project.interfaces.OnFoodItemClickListener;
@@ -32,6 +33,7 @@ public class ChildFragment1 extends Fragment implements OnFoodItemClickListener 
     private FoodAdapter foodAdapter;
     private Service service;
     ArrayList<Food> foods;
+    CategoryType categoryType;
 
     private OnFoodItemClickListener onFoodItemClickListener;
 

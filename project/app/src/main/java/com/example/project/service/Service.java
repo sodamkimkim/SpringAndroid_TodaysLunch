@@ -31,6 +31,9 @@ public interface Service {
     @GET("food")
     Call<Food> loadFood(@Query("foodName") String foodName);
 
+    @GET("category")
+    Call<List<Food>> getCategoryFoods(@Query("category") String category);
+
     @POST("food")
     Call<Food> createFood(@Body Food food);
 

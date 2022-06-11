@@ -53,49 +53,55 @@ public class Service {
 	 * 샘플 데이터 넣는 메서드입니다. 필요없을 시에 삭제해도 됩니다.
 	 */
 	public void sampledate() {
-		ArrayList<String> list1 = new ArrayList<String>();
+		ArrayList<String> list1 = new ArrayList<String>(); //밀면
 		list1.add(CategoryType.NOODLE.toString());
-		list1.add(CategoryType.OVERSEA.toString());
+		list1.add(CategoryType.SOUP.toString());
+		list1.add(CategoryType.SEASON.toString());
 
-		ArrayList<String> list2 = new ArrayList<String>();
+		ArrayList<String> list2 = new ArrayList<String>(); // 국밥
 		list2.add(CategoryType.RICE.toString());
 		list2.add(CategoryType.SOUP.toString());
 
-		ArrayList<String> list3 = new ArrayList<String>();
+		ArrayList<String> list3 = new ArrayList<String>(); //샌드위치
 		list3.add(CategoryType.INSTANT.toString());
 		list3.add(CategoryType.DIET.toString());
+		list3.add(CategoryType.OVERSEA.toString());
 
-		ArrayList<String> list4 = new ArrayList<String>();
+		ArrayList<String> list4 = new ArrayList<String>(); // 샐러드
 		list4.add(CategoryType.DIET.toString());
 		list4.add(CategoryType.INSTANT.toString());
 
-		ArrayList<String> list5 = new ArrayList<String>();
+		ArrayList<String> list5 = new ArrayList<String>(); //덮밥
 		list5.add(CategoryType.RICE.toString());
-		list5.add(CategoryType.INSTANT.toString());
 
 		ArrayList<String> list6 = new ArrayList<String>(); // 돈
 		list6.add(CategoryType.RICE.toString());
-		list6.add(CategoryType.INSTANT.toString());
+		list6.add(CategoryType.BUNSIG.toString());
+		list6.add(CategoryType.OVERSEA.toString());
+
 
 		ArrayList<String> list7 = new ArrayList<String>(); // 비빔
 		list7.add(CategoryType.RICE.toString());
-		list7.add(CategoryType.INSTANT.toString());
 
 		ArrayList<String> list8 = new ArrayList<String>(); // 냉면
-		list8.add(CategoryType.RICE.toString());
-		list8.add(CategoryType.OVERSEA.toString());
+		list8.add(CategoryType.NOODLE.toString());
+		list8.add(CategoryType.SOUP.toString());
+		list8.add(CategoryType.SEASON.toString());
 
 		ArrayList<String> list9 = new ArrayList<String>(); // 짬뽕
 		list9.add(CategoryType.NOODLE.toString());
 		list9.add(CategoryType.SOUP.toString());
+		list9.add(CategoryType.OVERSEA.toString());
 
 		ArrayList<String> list10 = new ArrayList<String>(); // 김밥
 		list10.add(CategoryType.RICE.toString());
+		list10.add(CategoryType.BUNSIG.toString());
 		list10.add(CategoryType.INSTANT.toString());
 
 		ArrayList<String> list11 = new ArrayList<String>(); // 유부
 		list11.add(CategoryType.RICE.toString());
-		list11.add(CategoryType.INSTANT.toString());
+		list11.add(CategoryType.OVERSEA.toString());
+		
 
 		ArrayList<String> list12 = new ArrayList<String>(); // 보쌈
 		list12.add(CategoryType.RICE.toString());
@@ -109,6 +115,7 @@ public class Service {
 
 		ArrayList<String> list15 = new ArrayList<String>(); // 볶음밥
 		list15.add(CategoryType.RICE.toString());
+		list15.add(CategoryType.OVERSEA.toString());
 
 		ArrayList<String> list16 = new ArrayList<String>(); // 피자
 		list16.add(CategoryType.OVERSEA.toString());
@@ -282,7 +289,7 @@ public class Service {
 				.url("https://cdn.pixabay.com/photo/2018/12/03/01/04/spicy-seafood-3852529_960_720.jpg").category(list9)
 				.storelist(storeList9).build();
 		Food food10 = new Food().builder().foodName("김밥")
-				.url("https://cdn.pixabay.com/photo/2015/07/08/19/40/food-836806_960_720.jpg").category(list10)
+				.url("https://cdn.pixabay.com/photo/2016/02/28/07/47/kim-rice-1226569_960_720.jpg").category(list10)
 				.storelist(storeList10).build();
 		Food food11 = new Food().builder().foodName("유부초밥")
 				.url("https://cdn.pixabay.com/photo/2019/12/15/10/37/inari-4696793_960_720.jpg").category(list11)
