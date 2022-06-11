@@ -1,7 +1,0 @@
-package com.example.todaylunch.dto;
-
-public class Store {
-	private String path;
-    private String storeName;
-    private double distance;
-}

@@ -38,7 +38,7 @@ public class Fragment3 extends Fragment implements OnMapItemClickListener {
     private Service service;
     List<Store> stores;
 
-    private int limit = 10;
+    private int limit = 100;
     private OnMapItemClickListener onMapItemClickListener;
 
 
@@ -74,7 +74,7 @@ public class Fragment3 extends Fragment implements OnMapItemClickListener {
 
 
     private void requestStoresData() {
-        service.get(limit).enqueue(new Callback<List<Store>>() {
+        service.getStores(limit).enqueue(new Callback<List<Store>>() {
             @Override
             public void onResponse(Call<List<Store>> call, Response<List<Store>> response) {
 
@@ -115,9 +115,6 @@ public class Fragment3 extends Fragment implements OnMapItemClickListener {
         fragment3Binding.recyclerView3.hasFixedSize();
 
         requestStoresData();
-
-
-
 
     }
 

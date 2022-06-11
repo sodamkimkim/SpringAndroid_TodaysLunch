@@ -12,4 +12,6 @@ public class Store {
 	private String address;
 	private String Imgurl;
     private double distance;
+	private double latitude;
+	private double longitude;
 }

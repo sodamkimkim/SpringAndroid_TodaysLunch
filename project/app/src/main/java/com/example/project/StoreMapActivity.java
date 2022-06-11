@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.example.project.service.Service;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -13,7 +14,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class StoreMapActivity extends AppCompatActivity implements OnMapReadyCallback {
-
+    private Service service;
     private GoogleMap mMap;
 
     @Override
@@ -66,12 +67,6 @@ public class StoreMapActivity extends AppCompatActivity implements OnMapReadyCal
         googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
 
     }
-
-
-
-
-
-
 
 
 }

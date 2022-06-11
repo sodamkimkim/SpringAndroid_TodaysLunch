@@ -61,6 +61,12 @@ public class foodController {
 	}
 
 
+@GetMapping("/storeInfo")
+public Store Store(@NotNull @RequestParam String storeName){
+	System.out.println("storeLocation호출됨");
+	Store store = service.getStoreInfo(storeName);
+	return store;
+}
 
 
 	

@@ -23,7 +23,7 @@ public interface Service {
 
 
     @GET("stores")
-    Call<List<Store>> get(@Query("limit") int limit);
+    Call<List<Store>> getStores(@Query("limit") int limit);
 
     @GET("foods")
     Call<List<Food>> getFoods();
