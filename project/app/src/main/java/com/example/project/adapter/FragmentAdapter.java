@@ -10,8 +10,10 @@ import com.example.project.Fragment2;
 import com.example.project.Fragment3;
 import com.example.project.MainActivity;
 import com.example.project.SearchFragment;
+import com.example.project.interfaces.OnMapItemClickListener;
+import com.example.project.models.Store;
 
-public class FragmentAdapter extends FragmentPagerAdapter {
+public class FragmentAdapter extends FragmentPagerAdapter implements OnMapItemClickListener {
 
     public FragmentAdapter(@NonNull FragmentManager fm, int behavior) {
         super(fm, behavior);
@@ -30,7 +32,7 @@ public class FragmentAdapter extends FragmentPagerAdapter {
                 fragment = new Fragment2();
                 break;
             case 2:
-                fragment = new Fragment3();
+                fragment = new Fragment3(this);
                 break;
             case 3:
                 fragment = new SearchFragment();
@@ -43,5 +45,10 @@ public class FragmentAdapter extends FragmentPagerAdapter {
     @Override
     public int getCount() {
         return MainActivity.TAB_COUNT;
+    }
+
+    @Override
+    public void selectedItem(Store store) {
+
     }
 }

@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.project.adapter.FoodAdapter;
 import com.example.project.interfaces.OnFoodItemClickListener;
-import com.example.project.models.FoodSample;
+import com.example.project.models.Food;
 
 
 public class ChildFragment1 extends Fragment {
@@ -35,7 +35,7 @@ public class ChildFragment1 extends Fragment {
                              Bundle savedInstanceState) {
 
 
-        FoodAdapter foodAdapter = new FoodAdapter(FoodSample.getFoodData(), getActivity(), new OnFoodItemClickListener() {
+        FoodAdapter foodAdapter = new FoodAdapter(Food.getFoodData(), getActivity(), new OnFoodItemClickListener() {
             @Override
             public void onItemClicked(View view, int position) {
 

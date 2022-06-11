@@ -1,6 +1,9 @@
 package com.example.project;
 
 import static com.example.project.Define.CategoryType.*;
+import static com.example.project.Define.CategoryType.DIET;
+import static com.example.project.Define.CategoryType.OVERSEA;
+import static com.example.project.Define.CategoryType.SEASON;
 
 import android.app.AlertDialog;
 import android.graphics.Color;
@@ -245,6 +248,6 @@ public class SearchFragment extends Fragment {
         alertMsg.setMessage(message);
         alertMsg.show();
     }
-    
+
 
 }

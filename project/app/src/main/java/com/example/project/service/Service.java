@@ -1,7 +1,6 @@
 package com.example.project.service;
 
 import com.example.project.models.Food;
-import com.example.project.models.FoodSample;
 import com.example.project.models.Store;
 
 import java.util.List;
