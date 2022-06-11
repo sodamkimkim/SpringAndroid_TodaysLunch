@@ -10,6 +10,17 @@ public class Store {
     private String imgurl;
     private int distance;
 
+    public Store(int id, String storeName, String address, String imgurl, int distance) {
+        this.id = id;
+        this.storeName = storeName;
+        this.address = address;
+        this.imgurl = imgurl;
+        this.distance = distance;
+    }
+    public Store(){
+
+    }
+
     public int getId() {
         return id;
     }

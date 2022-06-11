@@ -34,10 +34,10 @@ public class CategoryDetailActivity extends AppCompatActivity {
 
 
     private void initData() {
-        binding.foodNameTextView.setText(food.get());
+        binding.foodNameTextView.setText(food.getFoodName());
         Glide.with(this)
 
-                .load(food.getThumbnail())
+                .load(food.getUrl())
                 .transform(new CenterCrop(), new RoundedCorners(10))
                 .centerCrop()
                 .into(binding.menuImageView);

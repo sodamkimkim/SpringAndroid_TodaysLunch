@@ -18,16 +18,17 @@ import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.example.project.R;
 import com.example.project.interfaces.OnFoodItemClickListener;
+import com.example.project.models.Food;
 import com.example.project.models.FoodSample;
 
 import java.util.ArrayList;
 
-public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.MyViewHolder2>{
-    ArrayList<FoodSample> list;
+public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.MyViewHolder>{
+    ArrayList<Food> list;
     Context context;
     OnFoodItemClickListener onFoodItemClickListener;
 
-    public FoodAdapter(ArrayList<FoodSample> list, Context context, OnFoodItemClickListener onFoodItemClickListener) {
+    public FoodAdapter(ArrayList<Food> list, Context context, OnFoodItemClickListener onFoodItemClickListener) {
         this.list = list;
         this.context = context;
         this.onFoodItemClickListener = onFoodItemClickListener;
@@ -35,25 +36,25 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.MyViewHolder2>
 
     @NonNull
     @Override
-    public MyViewHolder2 onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater
                 .from(context)
                 .inflate(R.layout.item_food_card2,parent,false);
-        return new MyViewHolder2(itemView);
+        return new MyViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder2 holder, int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         // BindViewHolder(화면과 연결)
         // data mapping
         Log.d("TAG", "position: " + position);
-        FoodSample foodSample = list.get(position);
+        Food food = list.get(position);
         Glide.with(context)
-                .load(foodSample.getThumbnail())
+                .load(food.getUrl())
                 .centerCrop()
                 .transform(new CenterCrop(),new RoundedCorners(10))
                 .into(holder.foodImageView);
-        holder.foodTextView.setText(foodSample.getTitle());
+        holder.foodTextView.setText(food.getFoodName());
 
     }
 
@@ -62,12 +63,12 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.MyViewHolder2>
         return list.size();    }
 
     // 내부클래스
-    public class MyViewHolder2 extends RecyclerView.ViewHolder {
+    public class MyViewHolder extends RecyclerView.ViewHolder {
         //findviewbyid재활용해서 사용하기 위해서 만든 viewHolder
         private ImageView foodImageView;
         private TextView foodTextView;
 
-        public MyViewHolder2(@NonNull View itemView) {
+        public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             foodImageView = itemView.findViewById(R.id.foodImageView);
             foodTextView = itemView.findViewById(R.id.foodTitleTextView);

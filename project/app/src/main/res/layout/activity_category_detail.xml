@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:fontFamily="@font/baemindohyun"
-        android:text="연어덮밥"
+        android:text="냉면"
         android:textAlignment="center"
         android:textColor="#eeeeee"
         android:textSize="30dp"
@@ -45,13 +45,15 @@
         android:layout_height="250dp"
         android:layout_gravity="center_horizontal|center_vertical"
         android:background="#ff9f45"
-        app:layout_constraintBottom_toTopOf="@id/storeListFragementCont"
+        android:scaleType="centerCrop"
+        android:src="@drawable/coldnoodle"
+        app:layout_constraintBottom_toTopOf="@id/storeListFragementContainer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/foodNameTextView" />
 
     <LinearLayout
-        android:id="@+id/storeListFragementCont"
+        android:id="@+id/storeListFragementContainer"
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:layout_marginStart="10dp"

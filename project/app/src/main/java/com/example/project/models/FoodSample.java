@@ -58,6 +58,10 @@ public class FoodSample implements Serializable {
         foodSamples.add(new FoodSample("https://cdn.pixabay.com/photo/2019/12/15/10/37/inari-4696793_960_720.jpg", "유부초밥"));
         foodSamples.add(new FoodSample("https://cdn.pixabay.com/photo/2017/05/23/04/51/grilled-fish-2336227_960_720.jpg", "생선구이"));
         foodSamples.add(new FoodSample("https://cdn.pixabay.com/photo/2015/05/02/00/56/bossam-749357_960_720.jpg", "보쌈"));
+        foodSamples.add(new FoodSample("https://cdn.pixabay.com/photo/2020/06/02/12/20/soup-5250765_960_720.jpg", "쌀국수"));
+        foodSamples.add(new FoodSample("https://cdn.pixabay.com/photo/2016/08/23/08/53/tacos-1613795_960_720.jpg", "타코"));
+        foodSamples.add(new FoodSample("https://cdn.pixabay.com/photo/2021/06/06/09/49/kongguksu-6314887_960_720.jpg", "콩국수"));
+
         return foodSamples;
     }
 

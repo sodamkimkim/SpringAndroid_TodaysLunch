@@ -35,7 +35,7 @@ public class ChildFragment1 extends Fragment {
                              Bundle savedInstanceState) {
 
 
-        FoodAdapter foodAdapter = new FoodAdapter(Food.getFoodData(), getActivity(), new OnFoodItemClickListener() {
+        FoodAdapter foodAdapter = new FoodAdapter(Food.getFoodData1(), getActivity(), new OnFoodItemClickListener() {
             @Override
             public void onItemClicked(View view, int position) {
 

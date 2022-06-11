@@ -8,7 +8,10 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface Service {
@@ -25,4 +28,9 @@ public interface Service {
     @GET("food")
     Call<Food> loadFood(@Query("foodName")String foodName);
 
+    @POST("food")
+    Call<Food> createFood(@Body Food food);
+
+    @POST("store")
+    Call<Store> createStore(@Body Store store);
 }
