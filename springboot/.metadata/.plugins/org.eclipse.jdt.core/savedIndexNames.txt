@@ -27,7 +27,6 @@ INDEX VERSION 1.131+C:\Users\theka\OneDrive\Desktop\git_main\teamc_Project_Sprin
 2072138394.index
 214837665.index
 1874028055.index
-2143673671.index
 2390633990.index
 3226166506.index
 4080964971.index

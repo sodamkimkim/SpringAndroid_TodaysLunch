@@ -147,7 +147,7 @@ public class Service {
 		storeList4.add(new Store("투고샐러드 삼정타워점", "부산광역시 부산진구 중앙대로 672 삼정타워 5층 509",
 				"http://www.fcmedia.co.kr/news/photo/201704/9097_14140_558.jpg", 40));
 
-		ArrayList<Store> storeList5 = new ArrayList<Store>();
+		ArrayList<Store> storeList5 = new ArrayList<Store>(); //덮밥
 		storeList5.add(new Store("홍대개미 삼정타워점", "부산광역시 부산진구 중앙대로 672 삼정타워 5층 507호",
 				"https://blog.kakaocdn.net/dn/sb6f1/btradTqwUH1/H5kbCxz8UaBaFvOtQzKQyK/img.jpg", 40));
 		storeList5.add(new Store("면작 삼정타워점", "부산광역시 부산진구 부전동 227-2번지 삼정타워 5층 508호",
@@ -159,7 +159,7 @@ public class Service {
 				"https://mblogthumb-phinf.pstatic.net/MjAyMDA1MjBfNSAg/MDAxNTg5OTQ0MTU5NDY1.wQ4X1kz0wnyH0_HpppwWelCirlRSfnjsJCGMg-0MCtwg.TcAIZhwHuErJH12ctM13g0RYObF0VOwumxrweiDla5cg.JPEG.ochawonjiha/SE-063b7b4b-81e1-48ff-adb4-42aea208342c.jpg?type=w800",
 				200));
 
-		ArrayList<Store> storeList6 = new ArrayList<Store>();
+		ArrayList<Store> storeList6 = new ArrayList<Store>(); //돈까스
 		storeList6.add(new Store("마마도마 서면점", "부산광역시 부산진구 중앙대로680번길 41",
 				"https://mblogthumb-phinf.pstatic.net/MjAyMDA1MjBfNSAg/MDAxNTg5OTQ0MTU5NDY1.wQ4X1kz0wnyH0_HpppwWelCirlRSfnjsJCGMg-0MCtwg.TcAIZhwHuErJH12ctM13g0RYObF0VOwumxrweiDla5cg.JPEG.ochawonjiha/SE-063b7b4b-81e1-48ff-adb4-42aea208342c.jpg?type=w800",
 				200));

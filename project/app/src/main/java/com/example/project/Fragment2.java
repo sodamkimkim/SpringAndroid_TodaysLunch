@@ -80,46 +80,46 @@ public class Fragment2 extends Fragment implements View.OnClickListener {
                 childFragment = new ChildFragment1().newInstance();
                 setChildFragment(childFragment);
                 break;
-
-            case R.id.btn2Rice:
-                childFragment = new ChildFragment2().newInstance();
-                setChildFragment(childFragment);
-                break;
-
-            case R.id.btn3Noddle:
-                childFragment = new ChildFragment3().newInstance();
-                setChildFragment(childFragment);
-                break;
-
-            case R.id.btn4Soup:
-                childFragment = new ChildFragment4().newInstance();
-                setChildFragment(childFragment);
-                break;
-
-            case R.id.btn5Bunsig:
-                childFragment = new ChildFragment5().newInstance();
-                setChildFragment(childFragment);
-                break;
-
-            case R.id.btn6Dietary:
-                childFragment = new ChildFragment6().newInstance();
-                setChildFragment(childFragment);
-                break;
-
-            case R.id.btn7Instant:
-                childFragment = new ChildFragment7().newInstance();
-                setChildFragment(childFragment);
-                break;
-
-            case R.id.btn8Overseas:
-                childFragment = new ChildFragment8().newInstance();
-                setChildFragment(childFragment);
-                break;
-
-            case R.id.btn9Seasoned:
-                childFragment = new ChildFragment9().newInstance();
-                setChildFragment(childFragment);
-                break;
+//
+//            case R.id.btn2Rice:
+//                childFragment = new ChildFragment2().newInstance();
+//                setChildFragment(childFragment);
+//                break;
+//
+//            case R.id.btn3Noddle:
+//                childFragment = new ChildFragment3().newInstance();
+//                setChildFragment(childFragment);
+//                break;
+//
+//            case R.id.btn4Soup:
+//                childFragment = new ChildFragment4().newInstance();
+//                setChildFragment(childFragment);
+//                break;
+//
+//            case R.id.btn5Bunsig:
+//                childFragment = new ChildFragment5().newInstance();
+//                setChildFragment(childFragment);
+//                break;
+//
+//            case R.id.btn6Dietary:
+//                childFragment = new ChildFragment6().newInstance();
+//                setChildFragment(childFragment);
+//                break;
+//
+//            case R.id.btn7Instant:
+//                childFragment = new ChildFragment7().newInstance();
+//                setChildFragment(childFragment);
+//                break;
+//
+//            case R.id.btn8Overseas:
+//                childFragment = new ChildFragment8().newInstance();
+//                setChildFragment(childFragment);
+//                break;
+//
+//            case R.id.btn9Seasoned:
+//                childFragment = new ChildFragment9().newInstance();
+//                setChildFragment(childFragment);
+//                break;
 
         }
     }

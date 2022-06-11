@@ -25,8 +25,11 @@ public interface Service {
     @GET("stores")
     Call<List<Store>> get(@Query("limit") int limit);
 
+    @GET("foods")
+    Call<List<Food>> getFoods();
+
     @GET("food")
-    Call<Food> loadFood(@Query("foodName")String foodName);
+    Call<Food> loadFood(@Query("foodName") String foodName);
 
     @POST("food")
     Call<Food> createFood(@Body Food food);

@@ -1,7 +1,6 @@
 package com.example.project.interfaces;
-
-import android.view.View;
+import com.example.project.models.Food;
 
 public interface OnFoodItemClickListener {
-    void onItemClicked(View view, int position);
+    void onItemClicked(Food food);
 }
