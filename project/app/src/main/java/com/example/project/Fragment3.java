@@ -34,11 +34,8 @@ public class Fragment3 extends Fragment implements OnMapItemClickListener {
 
     private static final String TAG = "TAG";
     private Fragment3Binding fragment3Binding;
-
     private StoreAdapter storeAdapter;
-
     private Service service;
-
     List<Store> stores;
 
     private int limit = 10;
