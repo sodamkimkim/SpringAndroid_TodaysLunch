@@ -1,6 +1,7 @@
 package com.example.project.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,7 +33,6 @@ public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.MyViewHolder
 
     public void addItem(List<Store> stores) {
         list = (ArrayList<Store>) stores;
-
         notifyDataSetChanged();
     }
 
@@ -83,7 +83,7 @@ public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.MyViewHolder
                     .transform(new CenterCrop())
                     .into(storeImage);
             storeName.setText(store.getStoreName());
-            distance.setText(String.valueOf(store.getDistance() + "m"));
+            distance.setText(store.getDistance() + "m");
             address.setText(store.getAddress());
         }
 

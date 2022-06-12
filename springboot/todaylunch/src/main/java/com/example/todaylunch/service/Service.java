@@ -405,6 +405,7 @@ public class Service {
 	 * @return
 	 */
 	public Food suffleFood() {
+		System.out.println("shuffleFood");
 		ArrayList<Food> tempList = new ArrayList<Food>();
 		tempList.addAll(foodList);
 		Collections.shuffle(tempList);

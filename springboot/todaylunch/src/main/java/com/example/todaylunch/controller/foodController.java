@@ -26,13 +26,12 @@ import com.example.todaylunch.dto.Store;
 import com.example.todaylunch.service.Service;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 
-
 @RestController
 @RequestMapping("/lunch")
 @Validated
 public class foodController {
 	private Service service;
-	
+
 	public foodController() {
 		this.service = Service.getinstance();
 	}
@@ -43,15 +42,16 @@ public class foodController {
 		foods = service.getFoodList();
 		return foods;
 	}
-	
+
 	@GetMapping("/food")
-	public ResponseEntity<?> food(@NotEmpty @RequestParam String foodName) {	
+	public ResponseEntity<?> food(@NotEmpty @RequestParam String foodName) {
 		Food food = service.findFood(foodName);
-		if(food == null) {
+		if (food == null) {
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
 		}
 		return ResponseEntity.status(HttpStatus.OK).body(food);
 	}
+
 	@PostMapping("/food")
 	public ResponseEntity<Food> food(@RequestBody Food food) {
 
@@ -60,33 +60,34 @@ public class foodController {
 
 	}
 
-
-@GetMapping("/storeInfo")
-public Store Store(@NotNull @RequestParam String storeName){
-	System.out.println("storeLocation호출됨");
-	Store store = service.getStoreInfo(storeName);
-	return store;
-}
-
+	@GetMapping("/storeInfo")
+	public Store Store(@NotNull @RequestParam String storeName) {
+		System.out.println("storeLocation호출됨");
+		Store store = service.getStoreInfo(storeName);
+		return store;
+	}
 
 	
 	@GetMapping("/todayfood")
 	public Food randomfood() {
 		return service.suffleFood();
 	}
+
+	
 	
 	@GetMapping("/stores")
-	public List<Store> stores(@Min(1) @Max(10) @NotNull @RequestParam Integer limit){
+	public List<Store> stores(@Min(1) @Max(10) @NotNull @RequestParam Integer limit) {
 		System.out.println("호출됨");
 		List<Store> stores = service.getNearStorelist(limit);
 		return stores;
-		
 	}
+
 	
 	@GetMapping("/category")
-	public ResponseEntity<List<Food>> foods(@NotEmpty @RequestParam String category){
+	public ResponseEntity<List<Food>> foods(@NotEmpty @RequestParam String category) {
 		System.out.println("호출됨");
 		List<Food> categoryFood = service.getCategoryFood(category);
-		return ResponseEntity.status(HttpStatus.OK).body(categoryFood);	
+		return ResponseEntity.status(HttpStatus.OK).body(categoryFood);
 	}
+
 }

@@ -38,7 +38,7 @@ public class Fragment3 extends Fragment implements OnMapItemClickListener {
     private Service service;
     List<Store> stores;
 
-    private int limit = 100;
+    private int limit = 10;
     private OnMapItemClickListener onMapItemClickListener;
 
 

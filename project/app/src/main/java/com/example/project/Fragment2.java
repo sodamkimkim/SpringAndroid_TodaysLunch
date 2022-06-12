@@ -1,6 +1,7 @@
 package com.example.project;
 
 import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -72,13 +73,12 @@ public class Fragment2 extends Fragment implements View.OnClickListener {
     }
 
 
-    @SuppressLint("ResourceAsColor")
     @Override
     public void onClick(View v) {
         Fragment childFragment;
         switch (v.getId()) {
             case R.id.btn1AllMenu:
-                v.setBackgroundColor(R.color.white);
+                v.setBackgroundColor(Color.WHITE);
                 childFragment = new ChildFragment1().newInstance();
                 setChildFragment(childFragment);
                 break;

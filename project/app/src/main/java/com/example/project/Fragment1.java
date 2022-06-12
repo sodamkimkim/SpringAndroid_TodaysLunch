@@ -14,8 +14,10 @@ import android.view.ViewGroup;
 
 import com.example.project.adapter.CategoryAdapter;
 import com.example.project.databinding.Fragment1Binding;
+import com.example.project.databinding.Fragment3Binding;
 import com.example.project.interfaces.OnCategoryItemClickListener;
 import com.example.project.models.Category;
+import com.example.project.service.Service;
 
 import java.util.ArrayList;
 
@@ -42,21 +44,21 @@ public class Fragment1 extends Fragment {
                              Bundle savedInstanceState) {
 
 
+
         CategoryAdapter categoryAdapter = new CategoryAdapter(Category.getCategoryData(), getActivity(), new OnCategoryItemClickListener() {
             @Override
-            public void onItemClicked(View view, int position) {
-//                Log.d("TAG","넘겨받은 position : " + position);
-//                Intent intent = new Intent(getCategoryData(), DetailActivity.class);
-//                // 원래 intent는 object로 주고받지 못함.
-//                //serializable : 직렬화.
-//                // 직렬화 처리 --> object단위를 byte타입으로 변환시켜줌.
-//                // 역직렬화 --> byte -> object
-////                intent.putExtra("obj",Category.getCatagoryData().get(position));
-//                startActivity(intent);
+            public void onCategoryClicked(View view, int position) {
+                Log.d("TAG","넘겨받은 position : " + position);
+
             }
         });
 
         fragment1Binding = Fragment1Binding.inflate(inflater, container, false);
+
+        fragment1Binding.randomLayout.setOnClickListener(v -> {
+            System.out.println("클릭!!!!");
+            startActivity(new Intent(getContext(), CategoryDetailActivity.class));
+        });
 
 
         RecyclerView recyclerView = fragment1Binding.recyclerView1;
@@ -67,4 +69,6 @@ public class Fragment1 extends Fragment {
 
         return fragment1Binding.getRoot();
     }
+
+
 }

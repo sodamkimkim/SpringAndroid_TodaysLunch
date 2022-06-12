@@ -59,6 +59,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
 
     @Override
     public int getItemCount() {
+
         return list.size();
     }
 
@@ -74,7 +75,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
             categoryTitle = itemView.findViewById(R.id.titleTextView);
             itemView.setOnClickListener(view->{
                 Toast.makeText(view.getContext(),"TEST"+getLayoutPosition(),Toast.LENGTH_SHORT).show();
-                onCategoryItemClickListener.onItemClicked(itemView, getLayoutPosition());
+//                onCategoryItemClickListener.onCategoryClicked(itemView, getLayoutPosition());
             });
         }
     }
