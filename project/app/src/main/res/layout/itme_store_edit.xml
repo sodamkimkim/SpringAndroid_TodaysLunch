@@ -75,10 +75,22 @@
 
             <TextView
                 android:id="@+id/staticId"
-                android:visibility="invisible"
-                android:layout_marginStart="50dp"
+
+                android:layout_marginStart="10dp"
                 android:layout_gravity="end"
                 android:text="0"
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/itemBtn"
+                android:textStyle="bold"
+                android:layout_marginBottom="2dp"
+                android:layout_marginStart="10dp"
+                android:textColor="@color/edit_item_updatecolor"
+                android:textSize="15dp"
+                android:layout_gravity="center"
+                android:text="UPDATE"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
         </LinearLayout>

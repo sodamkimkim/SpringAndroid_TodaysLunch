@@ -470,5 +470,43 @@ public class Service {
 		}
 		return null;
 	}
+	
+	/**
+	 * foodlist에서 이름이 같은 푸드의 정보를 수정합니다.
+	 * @param food
+	 */
+	public boolean updateFoodInfo(Food food) {
+		System.out.println(food.toString());
+		for (Food f : foodList) {
+			if(f.getFoodName().equals(food.getFoodName())) {
+				foodList.remove(f);
+				foodList.add(food);
+				updateStoreList(f.getStorelist(), food.getStorelist());
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	/**
+	 * 이전 store들에 대한 정보를 제거한후 새로운 store의 정보를 넣습니다.
+	 * @param oldlist
+	 * @param newlist
+	 */
+	private void updateStoreList(List<Store> oldlist, List<Store> newlist) {
+		storeList.removeAll(oldlist);
+		storeList.addAll(newlist);
+	}
+	
+	public boolean deleteFood(String foodName) {
+		for (Food food : foodList) {
+			if(food.getFoodName().equals(foodName)) {
+				storeList.removeAll(food.getStorelist());
+				foodList.remove(food);
+				return true;
+			}
+		}
+		return false;
+	}
 
 }
