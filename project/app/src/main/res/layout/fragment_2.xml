@@ -24,6 +24,7 @@
             android:layout_height="50dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
+            android:gravity="center_vertical"
             android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatButton
@@ -31,19 +32,21 @@
                 android:layout_width="65dp"
                 android:layout_height="40dp"
                 android:layout_marginRight="5dp"
-                android:backgroundTint="#f76e11"
+                android:background="@drawable/btn_ok"
                 android:fontFamily="@font/baemindohyun"
                 android:text="전부"
-                android:textSize="14dp"/>
+                android:textColor="@drawable/text_color"
+                android:textSize="14dp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn2Rice"
                 android:layout_width="45dp"
                 android:layout_height="40dp"
                 android:layout_marginRight="5dp"
-                android:backgroundTint="#f76e11"
+                android:background="@drawable/btn_ok"
                 android:fontFamily="@font/baemindohyun"
                 android:text="밥"
+                android:textColor="@drawable/text_color"
                 android:textSize="14dp" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -51,9 +54,10 @@
                 android:layout_width="45dp"
                 android:layout_height="40dp"
                 android:layout_marginRight="5dp"
-                android:backgroundTint="#f76e11"
+                android:background="@drawable/btn_ok"
                 android:fontFamily="@font/baemindohyun"
                 android:text="면"
+                android:textColor="@drawable/text_color"
                 android:textSize="14dp" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -61,9 +65,10 @@
                 android:layout_width="65dp"
                 android:layout_height="40dp"
                 android:layout_marginRight="5dp"
-                android:backgroundTint="#f76e11"
+                android:background="@drawable/btn_ok"
                 android:fontFamily="@font/baemindohyun"
                 android:text="국물"
+                android:textColor="@drawable/text_color"
                 android:textSize="14dp" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -71,9 +76,10 @@
                 android:layout_width="65dp"
                 android:layout_height="40dp"
                 android:layout_marginRight="5dp"
-                android:backgroundTint="#f76e11"
+                android:background="@drawable/btn_ok"
                 android:fontFamily="@font/baemindohyun"
                 android:text="분식"
+                android:textColor="@drawable/text_color"
                 android:textSize="14dp" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -81,9 +87,10 @@
                 android:layout_width="100dp"
                 android:layout_height="40dp"
                 android:layout_marginRight="5dp"
-                android:backgroundTint="#f76e11"
+                android:background="@drawable/btn_ok"
                 android:fontFamily="@font/baemindohyun"
                 android:text="다이어트"
+                android:textColor="@drawable/text_color"
                 android:textSize="14dp" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -91,9 +98,10 @@
                 android:layout_width="80dp"
                 android:layout_height="40dp"
                 android:layout_marginRight="5dp"
-                android:backgroundTint="#f76e11"
+                android:background="@drawable/btn_ok"
                 android:fontFamily="@font/baemindohyun"
                 android:text="간편식"
+                android:textColor="@drawable/text_color"
                 android:textSize="14dp" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -101,9 +109,10 @@
                 android:layout_width="100dp"
                 android:layout_height="40dp"
                 android:layout_marginRight="5dp"
-                android:backgroundTint="#f76e11"
+                android:background="@drawable/btn_ok"
                 android:fontFamily="@font/baemindohyun"
                 android:text="다른나라"
+                android:textColor="@drawable/text_color"
                 android:textSize="14dp" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -111,9 +120,10 @@
                 android:layout_width="100dp"
                 android:layout_height="40dp"
                 android:layout_marginRight="5dp"
-                android:backgroundTint="#f76e11"
+                android:background="@drawable/btn_ok"
                 android:fontFamily="@font/baemindohyun"
                 android:text="계절요리"
+                android:textColor="@drawable/text_color"
                 android:textSize="14dp" />
 
         </LinearLayout>
