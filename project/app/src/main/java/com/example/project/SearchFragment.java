@@ -6,6 +6,7 @@ import static com.example.project.Define.CategoryType.OVERSEA;
 import static com.example.project.Define.CategoryType.SEASON;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 

@@ -182,7 +182,7 @@
                         android:ellipsize="end"
                         android:isScrollContainer="false"
                         android:maxLines="1"
-                        android:text="밀면" />
+                        tools:text="밀면" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <de.hdodenhof.circleimageview.CircleImageView
