@@ -36,9 +36,9 @@ public class Fragment3 extends Fragment implements OnMapItemClickListener {
     private Fragment3Binding fragment3Binding;
     private StoreAdapter storeAdapter;
     private Service service;
-    List<Store> stores;
+    ArrayList<Store> stores;
 
-    private int limit = 10;
+    private int limit = 29;
     private OnMapItemClickListener onMapItemClickListener;
 
 
@@ -102,7 +102,7 @@ public class Fragment3 extends Fragment implements OnMapItemClickListener {
 
     }
 
-    private void setupRecyclerView(List<Store> stores) {
+    private void setupRecyclerView(ArrayList<Store> stores) {
 
         storeAdapter = new StoreAdapter();
         storeAdapter.addItem(stores);
