@@ -7,12 +7,12 @@
     tools:context=".MainActivity">
 
     <HorizontalScrollView
-        android:scrollbars="none"
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fillViewport="true"
         android:orientation="horizontal"
+        android:scrollbars="none"
         app:layout_constraintBottom_toTopOf="@id/childFragmentContainer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,93 +26,93 @@
             android:layout_marginRight="10dp"
             android:orientation="horizontal">
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn1AllMenu"
                 android:layout_width="65dp"
                 android:layout_height="40dp"
+                android:layout_marginRight="5dp"
                 android:backgroundTint="#f76e11"
                 android:fontFamily="@font/baemindohyun"
-                android:layout_marginRight="5dp"
                 android:text="전부"
-                android:textSize="14dp" />
+                android:textSize="14dp"/>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn2Rice"
                 android:layout_width="45dp"
                 android:layout_height="40dp"
+                android:layout_marginRight="5dp"
                 android:backgroundTint="#f76e11"
                 android:fontFamily="@font/baemindohyun"
-                android:layout_marginRight="5dp"
                 android:text="밥"
                 android:textSize="14dp" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn3Noddle"
                 android:layout_width="45dp"
                 android:layout_height="40dp"
-                android:backgroundTint="#f76e11"
                 android:layout_marginRight="5dp"
+                android:backgroundTint="#f76e11"
                 android:fontFamily="@font/baemindohyun"
                 android:text="면"
                 android:textSize="14dp" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn4Soup"
                 android:layout_width="65dp"
                 android:layout_height="40dp"
+                android:layout_marginRight="5dp"
                 android:backgroundTint="#f76e11"
                 android:fontFamily="@font/baemindohyun"
-                android:layout_marginRight="5dp"
                 android:text="국물"
                 android:textSize="14dp" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn5Bunsig"
                 android:layout_width="65dp"
                 android:layout_height="40dp"
+                android:layout_marginRight="5dp"
                 android:backgroundTint="#f76e11"
                 android:fontFamily="@font/baemindohyun"
-                android:layout_marginRight="5dp"
                 android:text="분식"
                 android:textSize="14dp" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn6Dietary"
                 android:layout_width="100dp"
                 android:layout_height="40dp"
+                android:layout_marginRight="5dp"
                 android:backgroundTint="#f76e11"
                 android:fontFamily="@font/baemindohyun"
-                android:layout_marginRight="5dp"
                 android:text="다이어트"
                 android:textSize="14dp" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn7Instant"
                 android:layout_width="80dp"
                 android:layout_height="40dp"
+                android:layout_marginRight="5dp"
                 android:backgroundTint="#f76e11"
                 android:fontFamily="@font/baemindohyun"
-                android:layout_marginRight="5dp"
                 android:text="간편식"
                 android:textSize="14dp" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn8Overseas"
                 android:layout_width="100dp"
                 android:layout_height="40dp"
+                android:layout_marginRight="5dp"
                 android:backgroundTint="#f76e11"
                 android:fontFamily="@font/baemindohyun"
-                android:layout_marginRight="5dp"
                 android:text="다른나라"
                 android:textSize="14dp" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn9Seasoned"
                 android:layout_width="100dp"
                 android:layout_height="40dp"
+                android:layout_marginRight="5dp"
                 android:backgroundTint="#f76e11"
                 android:fontFamily="@font/baemindohyun"
-                android:layout_marginRight="5dp"
                 android:text="계절요리"
                 android:textSize="14dp" />
 
@@ -122,8 +122,8 @@
     <FrameLayout
         android:id="@+id/childFragmentContainer"
         android:layout_width="match_parent"
-        android:background="#ff9f45"
         android:layout_height="0dp"
+        android:background="#ff9f45"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

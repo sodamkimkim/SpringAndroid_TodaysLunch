@@ -113,7 +113,8 @@ public class ChildFragment9 extends Fragment implements OnFoodItemClickListener 
 
     @Override
     public void onItemClicked(Food food) {
-        Intent intent = new Intent(getContext(), CategoryDetailActivity.class);
+        Intent intent = new Intent(getContext(), MenuDetailActivity.class);
+        intent.putExtra(MenuDetailActivity.PARAM_NAME_1, food);
         startActivity(intent);
     }
 }

@@ -2,10 +2,11 @@ package com.example.project.models;
 
 import com.example.project.Define.CategoryType;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Food {
+public class Food implements Serializable {
     //    NOODLE, RICE, SOUP, BUNSIG, DIET, INSTANT,OVERSEA, SEASON
     private String foodName;
     private String url;

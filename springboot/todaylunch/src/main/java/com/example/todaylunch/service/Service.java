@@ -177,13 +177,13 @@ public class Service {
 				334,35.152061385693955,129.06302482473464 ));
 
 		ArrayList<Store> storeList7 = new ArrayList<Store>(); // 비빔밥
-		storeList7.add(new Store("우정돌솥비빔밥", "부산 부산진구 동천로85번길 3",
+		storeList7.add(new Store("서면 우정분식", "부산 부산진구 동천로85번길 3",
 				"https://search.pstatic.net/common/?autoRotate=true&quality=95&type=w750&src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxODAxMjZfMjc1%2FMDAxNTE2OTU5NjU1NzA5._cX_D25lYSlO5nNiJJ9VCPw0W2qPPPMW5CO-1-RpyM4g.dQyCDCEy4C3zUJlKFzMIRE3OhSUSIUTKHASTE1UXM1kg.JPEG.jiruck%2FKakaoTalk_20180126_182503403.jpg",
 				473,35.154803088609775,129.06157435565157 ));
 		storeList7.add(new Store("고봉민김밥인 부산서면포스코점", "부산광역시 부산진구 중앙대로 668",
 				"https://mblogthumb-phinf.pstatic.net/MjAxODAzMTVfMjkw/MDAxNTIxMDk4NTk0OTUw.WuupZwqNF8sgJa59jNp183dOzaSeYZCZjNeC58lEtDwg.TP4ZZfofLrOgyaZKhVO4YwA2luJrDLElW0bSR8ritoQg.JPEG.itgirlkk/IMG_3802.jpg?type=w800",
 				0,35.15244376458272,129.0596193518293));
-		storeList7.add(new Store("할매충무김밥", "부산광역시 부산진구 서면로 30",
+		storeList7.add(new Store("할매충무김밥 서면점", "부산광역시 부산진구 서면로 30",
 				"https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjAzMjdfMTE5%2FMDAxNjQ4MzU2NjY2MTI5.DLFvCp5onVtimgbIsINo5vNuQ-vzFLC4JJZhVh75xuEg.U7DAV9BI6tBSPhUDuy-Kb6Y0IZMhc_RsJRF-sFNVLhEg.JPEG.yesjii%2FKakaoTalk_20220327_134942362_12.jpg&type=a340",
 				223,35.15336261477198,129.0580487716101 ));
 		ArrayList<Store> storeList8 = new ArrayList<Store>(); // 냉면
@@ -210,7 +210,7 @@ public class Service {
 		storeList10.add(new Store("김가네 서면1번가점", "부산광역시 부산진구 부전2동 신천대로62번길 62",
 				"https://search.pstatic.net/common/?autoRotate=true&quality=95&type=w750&src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxNzExMjBfODMg%2FMDAxNTExMTA0MTM1OTUy.PM8d3xNFZHd3YQ2jifvOJrQdvUdsn4j2dJ03f1rCkOsg.fCKvX02ruQAiM32_nwm-Udl_umqmFtVx_J920jTM_6og.JPEG.kbmw88%2FKakaoTalk_20171120_000503876.jpg",
 				216,35.15354357655303,129.0585361185608 ));
-		storeList10.add(new Store("할매충무김밥", "부산광역시 부산진구 서면로 30",
+		storeList10.add(new Store("할매충무김밥 서면점", "부산광역시 부산진구 서면로 30",
 				"https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjAzMjdfMTE5%2FMDAxNjQ4MzU2NjY2MTI5.DLFvCp5onVtimgbIsINo5vNuQ-vzFLC4JJZhVh75xuEg.U7DAV9BI6tBSPhUDuy-Kb6Y0IZMhc_RsJRF-sFNVLhEg.JPEG.yesjii%2FKakaoTalk_20220327_134942362_12.jpg&type=a340",
 				223,35.15336261477198,129.0580487716101 ));
 

@@ -1,6 +1,7 @@
 package com.example.project;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -121,7 +122,8 @@ public class Fragment3 extends Fragment implements OnMapItemClickListener {
 
     @Override
     public void selectedItem(Store store) {
-        Intent intent = new Intent(getContext(), StoreMapActivity.class);
+//        https://imleaf.tistory.com/16
+        Intent intent = new Intent(Intent.ACTION_VIEW,Uri.parse("geo:0,0?q=" + store.getAddress()));
         startActivity(intent);
     }
 }

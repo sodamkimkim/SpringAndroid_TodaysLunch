@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/baemindohyun"
-        android:text="카테고리별 랜덤추천 메뉴는?"
+        android:text="메뉴 별 가게 정보 보기"
         android:textColor="#eeeeee"
         android:textSize="20dp"
         android:layout_marginTop="20dp"

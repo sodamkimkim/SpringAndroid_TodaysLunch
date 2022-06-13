@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 
 import com.example.project.Define.CategoryType;
 import com.example.project.adapter.FoodAdapter;
+import com.example.project.databinding.Fragment3Binding;
 import com.example.project.databinding.FragmentChild1Binding;
 import com.example.project.interfaces.OnFoodItemClickListener;
 import com.example.project.models.Food;
@@ -106,7 +108,8 @@ public class ChildFragment1 extends Fragment implements OnFoodItemClickListener 
 
     @Override
     public void onItemClicked(Food food) {
-        Intent intent = new Intent(getContext(), CategoryDetailActivity.class);
+        Intent intent = new Intent(getContext(), MenuDetailActivity.class);
+        intent.putExtra(MenuDetailActivity.PARAM_NAME_1, food);
         startActivity(intent);
     }
 }
