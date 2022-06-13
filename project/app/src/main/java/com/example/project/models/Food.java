@@ -55,7 +55,18 @@ public class Food implements Serializable {
         this.storelist = storelist;
     }
 
-//    public static ArrayList<Food> getFoodData1() {
+    @Override
+    public String toString() {
+        return "Food{" +
+                "foodName='" + foodName + '\'' +
+                ", url='" + url + '\'' +
+                ", category=" + category +
+                ", storelist=" + storelist +
+                '}';
+    }
+
+
+    //    public static ArrayList<Food> getFoodData1() {
 //        //대충 데이터 아무거나 들고와서 넣었어욤
 //        ArrayList<String> list12 = new ArrayList<String>(); // 보쌈
 //        list12.add(CategoryType.RICE.toString());
