@@ -32,7 +32,6 @@ import retrofit2.Response;
 
 
 public class Fragment3 extends Fragment implements OnMapItemClickListener {
-
     private static final String TAG = "TAG";
     private Fragment3Binding fragment3Binding;
     private StoreAdapter storeAdapter;
@@ -44,7 +43,7 @@ public class Fragment3 extends Fragment implements OnMapItemClickListener {
 
 
     public Fragment3(OnMapItemClickListener onMapItemClickListener) {
-            this.onMapItemClickListener = onMapItemClickListener;
+        this.onMapItemClickListener = onMapItemClickListener;
     }
 
 

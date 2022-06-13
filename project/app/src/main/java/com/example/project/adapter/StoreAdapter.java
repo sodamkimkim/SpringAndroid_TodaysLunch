@@ -24,6 +24,7 @@ import java.util.List;
 
 public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.MyViewHolder> {
 
+
     ArrayList<Store> list;
     private OnMapItemClickListener  onMapItemClickListener;
 
@@ -94,7 +95,6 @@ public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.MyViewHolder
 
 
     }
-
 
 }
 

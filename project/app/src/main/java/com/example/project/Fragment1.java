@@ -54,7 +54,7 @@ public class Fragment1 extends Fragment {
 
         fragment1Binding.randomLayout.setOnClickListener(v -> {
             System.out.println("클릭!!!!");
-            startActivity(new Intent(getContext(), AppRecommendationDetailActivity.class));
+            startActivity(new Intent(getContext(), EventActivity.class));
         });
 
 

@@ -89,7 +89,7 @@ public class foodController {
 	
 	@GetMapping("/stores")
 	public List<Store> stores(@Min(1) @Max(30) @NotNull @RequestParam Integer limit) {
-		System.out.println("호출됨");
+		System.out.println("store 호출됨");
 		List<Store> stores = service.getNearStorelist(limit);
 		return stores;
 	}
