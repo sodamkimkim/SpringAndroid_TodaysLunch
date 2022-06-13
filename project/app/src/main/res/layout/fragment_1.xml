@@ -19,13 +19,13 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/randomLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#ff9f45">
 
 
             <FrameLayout
+                android:id="@+id/randomLayout"
                 android:layout_margin="10dp"
                 android:background="@drawable/random"
                 android:layout_width="match_parent"

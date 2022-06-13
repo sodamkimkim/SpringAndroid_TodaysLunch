@@ -1,5 +1,6 @@
 package com.example.project.service;
 
+import com.example.project.models.Category;
 import com.example.project.models.Food;
 import com.example.project.models.Store;
 
@@ -23,6 +24,8 @@ public interface Service {
             .addConverterFactory(GsonConverterFactory.create())
             .build();
 
+    @GET("todayfood")
+    Call<Food> getTodayFood();
 
     @GET("stores")
     Call<List<Store>> getStores(@Query("limit") int limit);
@@ -35,6 +38,10 @@ public interface Service {
 
     @GET("category")
     Call<List<Food>> getCategoryFoods(@Query("category") String category);
+
+    @GET("randomcategoryfood")
+    Call<Food> getRandomCategoryFood(@Query("category") String category);
+
 
     @POST("food")
     Call<Food> createFood(@Body Food food);

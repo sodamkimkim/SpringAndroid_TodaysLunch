@@ -1,6 +1,7 @@
 package com.example.project;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -36,9 +37,9 @@ public class Fragment3 extends Fragment implements OnMapItemClickListener {
     private Fragment3Binding fragment3Binding;
     private StoreAdapter storeAdapter;
     private Service service;
-    List<Store> stores;
+    ArrayList<Store> stores;
 
-    private int limit = 100;
+    private int limit = 29;
     private OnMapItemClickListener onMapItemClickListener;
 
 
@@ -102,7 +103,7 @@ public class Fragment3 extends Fragment implements OnMapItemClickListener {
 
     }
 
-    private void setupRecyclerView(List<Store> stores) {
+    private void setupRecyclerView(ArrayList<Store> stores) {
 
         storeAdapter = new StoreAdapter();
         storeAdapter.addItem(stores);
@@ -121,7 +122,8 @@ public class Fragment3 extends Fragment implements OnMapItemClickListener {
 
     @Override
     public void selectedItem(Store store) {
-        Intent intent = new Intent(getContext(), StoreMapActivity.class);
+//        https://imleaf.tistory.com/16
+        Intent intent = new Intent(Intent.ACTION_VIEW,Uri.parse("geo:0,0?q=" + store.getAddress()));
         startActivity(intent);
     }
 }

@@ -2,6 +2,8 @@ package com.example.project.interfaces;
 
 import android.view.View;
 
+import com.example.project.models.Category;
+
 public interface OnCategoryItemClickListener {
-    void onItemClicked(View view, int position);
+    void onCategoryClicked(Category category);
 }

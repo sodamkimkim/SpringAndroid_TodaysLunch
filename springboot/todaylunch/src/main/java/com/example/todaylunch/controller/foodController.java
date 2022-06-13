@@ -46,6 +46,8 @@ public class foodController {
 	}
 
 	@GetMapping("/food")
+
+
 	public ResponseEntity<Food> food(@NotEmpty @RequestParam String foodName) {
 		Food food = service.findFood(foodName);
 		if (food == null) {
@@ -74,19 +76,31 @@ public class foodController {
 		return service.suffleFood();
 	}
 
+
+	
+	
+	@GetMapping("/randomcategoryfood")
+    public Food getRandomCategoryFood(@NotEmpty @RequestParam String category) {
+        System.out.println("호출됨");
+        Food randomFood = service.getRandomCategoryFood(category);
+        return randomFood;
+    }
+	
+	
 	@GetMapping("/stores")
-	public List<Store> stores(@Min(1) @Max(10) @NotNull @RequestParam Integer limit) {
+	public List<Store> stores(@Min(1) @Max(30) @NotNull @RequestParam Integer limit) {
 		System.out.println("호출됨");
 		List<Store> stores = service.getNearStorelist(limit);
 		return stores;
-
 	}
+
 
 	@GetMapping("/category")
 	public ResponseEntity<List<Food>> foods(@NotEmpty @RequestParam String category) {
 		System.out.println("호출됨");
 		List<Food> categoryFood = service.getCategoryFood(category);
 		return ResponseEntity.status(HttpStatus.OK).body(categoryFood);
+
 	}
 	
 	@PutMapping("/food")
@@ -107,5 +121,7 @@ public class foodController {
 		}
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("해당하신 foodName이 존재하지 않습니다");
 		
+
 	}
+
 }

@@ -1,6 +1,7 @@
 package com.example.project.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,6 +34,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
         this.onCategoryItemClickListener = onCategoryItemClickListener;
     }
 
+
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -46,7 +48,6 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
     // BindViewHolder(화면과 연결)
     // data mapping
-        Log.d("TAG", "position: " + position);
         Category category = list.get(position);
         Glide.with(context)
                 .load(category.getThumbnail())
@@ -54,7 +55,9 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
                 .transform(new CenterCrop(),new RoundedCorners(10))
                 .into(holder.categoryTumbnail);
         holder.categoryTitle.setText(category.getTitle());
-
+        holder.itemView.setOnClickListener(view -> {
+            onCategoryItemClickListener.onCategoryClicked(category);
+        });
     }
 
     @Override
@@ -72,10 +75,10 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
             super(itemView);
             categoryTumbnail = itemView.findViewById(R.id.categoryImageView);
             categoryTitle = itemView.findViewById(R.id.titleTextView);
-            itemView.setOnClickListener(view->{
-                Toast.makeText(view.getContext(),"TEST"+getLayoutPosition(),Toast.LENGTH_SHORT).show();
-                onCategoryItemClickListener.onItemClicked(itemView, getLayoutPosition());
-            });
+
+
+
+
         }
     }
 }

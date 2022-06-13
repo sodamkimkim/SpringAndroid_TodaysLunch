@@ -3,6 +3,8 @@ package com.example.project;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
 
 import com.example.project.service.Service;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -12,6 +14,8 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import java.util.zip.Inflater;
 
 public class StoreMapActivity extends AppCompatActivity implements OnMapReadyCallback {
     private Service service;
