@@ -72,11 +72,22 @@ public class SearchFragment extends Fragment {
 
     }
 
+    /**
+     * 프래그먼트 생성
+     * @param savedInstanceState
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
 
+    /**
+     * 프래그먼트 뷰 생성
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -86,6 +97,9 @@ public class SearchFragment extends Fragment {
         return fragmentSearchBinding.getRoot();
     }
 
+    /**
+     * 프래그먼트 멤버변수 주소값 부여
+     */
     private void initData() {
         service = Service.retrofit.create(Service.class);
 
@@ -110,6 +124,9 @@ public class SearchFragment extends Fragment {
         checkBoxHashMap.put(OVERSEA, fragmentSearchBinding.checkOverseaFood);
     }
 
+    /**
+     * 이벤트 등록
+     */
     private void addEvent() {
         searchbutton.setOnClickListener(view -> {
             if (!(editMode)) {
@@ -140,13 +157,13 @@ public class SearchFragment extends Fragment {
             tempfood.setUrl(fragmentSearchBinding.urlText.getText().toString());
             tempfood.setStorelist(editStoreAdapter.getStores());
             Log.d("TAGS", tempfood.toString());
-            
+
             if(submitBtn.getText().toString().equals("POST")){
                 postFoodDate(tempfood);
             }else{
                 updateFoodDate(tempfood);
             }
-            
+
         });
 
         deleteBtn.setOnClickListener(view -> {
@@ -166,6 +183,10 @@ public class SearchFragment extends Fragment {
         });
     }
 
+    /**
+     * url 이미지 드로잉
+     * @param url
+     */
     private void drawImage(String url) {
         Glide.with(this)
                 .load(url)
@@ -174,6 +195,10 @@ public class SearchFragment extends Fragment {
                 .into(urlimageView);
     }
 
+    /**
+     * 유저가 선택한 카테고리에 해당하는 스트링 값을 체크하여 스트링리스트로 반환
+     * @return
+     */
     private ArrayList<String> readCategory() {
         ArrayList<String> selectedCategory = new ArrayList<String>();
         Iterator<Map.Entry<CategoryType, CheckBox>> categoryboxs = checkBoxHashMap.entrySet().iterator();
@@ -187,6 +212,10 @@ public class SearchFragment extends Fragment {
 
         return selectedCategory;
     }
+
+    /**
+     * 페이지를 초기화
+     */
     private void clearPage(){
         tempfood = new Food();
         tempfood.setCategory(new ArrayList<String>());
@@ -199,12 +228,19 @@ public class SearchFragment extends Fragment {
         changeSearchbtnState(Mode.NONTYPE);
     }
 
+    /**
+     * 카테고리 초기화
+     */
     private void clearCategory(){
         checkBoxHashMap.forEach((categoryType, checkBox) -> {
             checkBox.setChecked(false);
         });
     }
 
+    /**
+     * 카테고리에 해당하는 리스트를 받으면 화면에 클릭된것으로 표시하는 기능
+     * @param categoryList
+     */
     private void loadCategory(List<String> categoryList) {
         for (String category : categoryList) {
             switch (category) {
@@ -235,6 +271,10 @@ public class SearchFragment extends Fragment {
         }
     }
 
+    /**
+     * 서버에게 Food 데이터를 요청
+     * @param foodName
+     */
     private void requestFoodInfo(String foodName) {
         service.loadFood(foodName).enqueue(new Callback<Food>() {
             @Override
@@ -265,6 +305,10 @@ public class SearchFragment extends Fragment {
 
     }
 
+    /**
+     * food 데이터를 화면에 드로잉
+     * @param food
+     */
     private void writeFoodData(Food food) {
         loadCategory(food.getCategory());
         fragmentSearchBinding.urlText.setText(food.getUrl());
@@ -272,6 +316,10 @@ public class SearchFragment extends Fragment {
 
     }
 
+    /**
+     * 스토어 리스트에 해당하는 리사이클러 뷰를 드로잉
+     * @param stores
+     */
     private void drawRecyclerView(List<Store> stores) {
         editStoreAdapter = new EditStoreAdapter();
         editStoreAdapter.loadList(stores);
@@ -280,6 +328,10 @@ public class SearchFragment extends Fragment {
         fragmentSearchBinding.storeEditFleid.hasFixedSize();
     }
 
+    /**
+     * 데이터 추가를 서버에 요청
+     * @param food
+     */
     private void postFoodDate(Food food){
         service.createFood(food).enqueue(new Callback<Food>() {
             @Override
@@ -300,6 +352,10 @@ public class SearchFragment extends Fragment {
 
     }
 
+    /**
+     * food 데이터 갱신을 서버에 요청
+     * @param food
+     */
     private void updateFoodDate(Food food){
         service.updateFood(food).enqueue(new Callback<Food>() {
             @Override
@@ -319,6 +375,10 @@ public class SearchFragment extends Fragment {
         });
     }
 
+    /**
+     * 서버에 해당 foodName의 데이터를 삭제를 요청
+     * @param foodName
+     */
     private void deleteFoodDate(String foodName){
         service.deleteFood(foodName).enqueue(new Callback<String>() {
             @Override
@@ -328,6 +388,10 @@ public class SearchFragment extends Fragment {
         });
     }
 
+    /**
+     * 버튼 선택에 따른 프래그먼트의 동작을 지정
+     * @param mode
+     */
     private void changeSearchbtnState(Mode mode) {
         if (mode.equals(Mode.UPDATE)) {
             editMode = true;
@@ -359,6 +423,11 @@ public class SearchFragment extends Fragment {
 
     }
 
+    /**
+     * 메세지 표시
+     * @param title
+     * @param message
+     */
     public void alertMessage(String title, String message) {
         AlertDialog.Builder alertMsg = new AlertDialog.Builder(getContext());
         alertMsg.setTitle(title);
