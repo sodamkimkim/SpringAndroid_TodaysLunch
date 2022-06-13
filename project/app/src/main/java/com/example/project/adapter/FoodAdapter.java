@@ -51,7 +51,6 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.MyViewHolder>{
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         // BindViewHolder(화면과 연결)
         // data mapping
-        Log.d("TAG", "position: " + position);
         Food food = list.get(position);
         holder.drawFoodList(food);
         holder.itemView.setOnClickListener(view->{

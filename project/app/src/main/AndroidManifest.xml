@@ -17,6 +17,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".CategoryRandomMenuDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".MenuDetailActivity"
             android:exported="false" />
 
@@ -39,7 +42,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true" />
-        <activity android:name=".CategoryDetailActivity" />
+        <activity android:name=".AppRecommendationDetailActivity" />
     </application>
 
 </manifest>

@@ -14,7 +14,7 @@ import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.example.project.adapter.FoodAdapter;
 import com.example.project.adapter.StoreAdapter;
-import com.example.project.databinding.ActivityCategoryDetailBinding;
+import com.example.project.databinding.ActivityAppRecommendationDetailBinding;
 import com.example.project.databinding.Fragment1Binding;
 import com.example.project.databinding.Fragment3Binding;
 import com.example.project.models.Category;
@@ -32,9 +32,9 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 // 데이터 전달받아서 화면 구성
-public class CategoryDetailActivity extends AppCompatActivity {
+public class AppRecommendationDetailActivity extends AppCompatActivity {
 
-    private ActivityCategoryDetailBinding binding;
+    private ActivityAppRecommendationDetailBinding binding;
     private Service service;
     private ArrayList<Store> stores;
     StoreAdapter storeAdapter;
@@ -44,7 +44,7 @@ public class CategoryDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityCategoryDetailBinding.inflate(getLayoutInflater());
+        binding = ActivityAppRecommendationDetailBinding.inflate(getLayoutInflater());
         service = Service.retrofit.create(Service.class);
         stores = new ArrayList<Store>();
         requestCategoryData();

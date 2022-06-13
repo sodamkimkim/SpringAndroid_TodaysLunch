@@ -10,7 +10,7 @@ import android.util.Log;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.example.project.adapter.StoreAdapter;
-import com.example.project.databinding.ActivityMenuDetailBinding;
+import com.example.project.databinding.ActivityAppRecommendationDetailBinding;
 import com.example.project.models.Food;
 import com.example.project.models.Store;
 import com.example.project.service.Service;
@@ -23,28 +23,24 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MenuDetailActivity extends AppCompatActivity {
+public class CategoryRandomMenuDetailActivity extends AppCompatActivity {
 
-
-    public static final String PARAM_NAME_1 = "food obj";
-    private ActivityMenuDetailBinding binding;
+    private ActivityAppRecommendationDetailBinding binding;
     private Service service;
-    private Food food;
     private ArrayList<Store> stores;
     StoreAdapter storeAdapter;
     String TAG = "TAG";
-
+    public static final String PARAM_NAME = "category";
+    private String category;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if(getIntent()!=null) {
-            food = (Food) getIntent().getSerializableExtra(PARAM_NAME_1);
-        }
+        category = getIntent().getStringExtra(PARAM_NAME);
 
 
-        binding = ActivityMenuDetailBinding.inflate(getLayoutInflater());
+        binding = ActivityAppRecommendationDetailBinding.inflate(getLayoutInflater());
         service = Service.retrofit.create(Service.class);
         stores = new ArrayList<Store>();
         requestCategoryData();
@@ -61,10 +57,10 @@ public class MenuDetailActivity extends AppCompatActivity {
 
     }
 
-
     private void requestCategoryData() {
+        Log.d(TAG, PARAM_NAME);
         Log.d(TAG, "requestCategoryData: " + stores.toString());
-        service.loadFood(food.getFoodName()).enqueue(new Callback<Food>() {
+            service.getRandomCategoryFood(category).enqueue(new Callback<Food>() {
             @Override
             public void onResponse(Call<Food> call, Response<Food> response) {
                 if (response.isSuccessful()) {
@@ -106,15 +102,6 @@ public class MenuDetailActivity extends AppCompatActivity {
         storeAdapter.addItem(stores);
         Log.d(TAG, "templist: "+stores.toString());
 
-//        for (Store store : templist) {
-//            store.setStoreName(store.getStoreName());
-//            store.setImgurl(store.getImgurl());
-//            store.setAddress(store.getAddress());
-//            store.setDistance(store.getDistance());
-//            stores.add(store);
-//
-//            Log.d(TAG, "for문 안: " + stores.toString());
-//        }
     }
 
 }

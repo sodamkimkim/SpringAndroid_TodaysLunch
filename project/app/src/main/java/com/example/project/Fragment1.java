@@ -14,12 +14,8 @@ import android.view.ViewGroup;
 
 import com.example.project.adapter.CategoryAdapter;
 import com.example.project.databinding.Fragment1Binding;
-import com.example.project.databinding.Fragment3Binding;
 import com.example.project.interfaces.OnCategoryItemClickListener;
 import com.example.project.models.Category;
-import com.example.project.service.Service;
-
-import java.util.ArrayList;
 
 public class Fragment1 extends Fragment {
 
@@ -47,9 +43,10 @@ public class Fragment1 extends Fragment {
 
         CategoryAdapter categoryAdapter = new CategoryAdapter(Category.getCategoryData(), getActivity(), new OnCategoryItemClickListener() {
             @Override
-            public void onCategoryClicked(View view, int position) {
-                Log.d("TAG","넘겨받은 position : " + position);
-
+            public void onCategoryClicked(Category category) {
+                Intent intent = new Intent(getContext(), CategoryRandomMenuDetailActivity.class);
+                intent.putExtra(CategoryRandomMenuDetailActivity.PARAM_NAME, category.getCategory());
+                startActivity(intent);
             }
         });
 
@@ -57,7 +54,7 @@ public class Fragment1 extends Fragment {
 
         fragment1Binding.randomLayout.setOnClickListener(v -> {
             System.out.println("클릭!!!!");
-            startActivity(new Intent(getContext(), CategoryDetailActivity.class));
+            startActivity(new Intent(getContext(), AppRecommendationDetailActivity.class));
         });
 
 

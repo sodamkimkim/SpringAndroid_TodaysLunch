@@ -75,6 +75,14 @@ public class foodController {
 
 	
 	
+	@GetMapping("/randomcategoryfood")
+    public Food getRandomCategoryFood(@NotEmpty @RequestParam String category) {
+        System.out.println("호출됨");
+        Food randomFood = service.getRandomCategoryFood(category);
+        return randomFood;
+    }
+	
+	
 	@GetMapping("/stores")
 	public List<Store> stores(@Min(1) @Max(30) @NotNull @RequestParam Integer limit) {
 		System.out.println("호출됨");

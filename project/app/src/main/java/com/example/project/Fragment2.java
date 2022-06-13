@@ -176,10 +176,8 @@ public class Fragment2 extends Fragment implements View.OnClickListener {
 
 
     private void buttonEventListener(Button curruntButton) {
-        Log.d("TAG", "buttonEventListener: " + buttons.toString());
         for (Button button : buttons) {
             if (button == curruntButton) {
-                Log.d("TAG", button + "클릭됨");
                 continue;
             }
             button.setEnabled(true);

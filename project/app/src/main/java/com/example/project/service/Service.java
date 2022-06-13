@@ -37,6 +37,10 @@ public interface Service {
     @GET("category")
     Call<List<Food>> getCategoryFoods(@Query("category") String category);
 
+    @GET("randomcategoryfood")
+    Call<Food> getRandomCategoryFood(@Query("category") String category);
+
+
     @POST("food")
     Call<Food> createFood(@Body Food food);
 
