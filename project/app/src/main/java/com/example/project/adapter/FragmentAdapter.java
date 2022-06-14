@@ -35,7 +35,7 @@ public class FragmentAdapter extends FragmentPagerAdapter implements OnMapItemCl
                 fragment = new Fragment3(this);
                 break;
             case 3:
-                fragment = new SearchFragment();
+                fragment = SearchFragment.getInstance();
                 break;
 
         }

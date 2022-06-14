@@ -8,6 +8,9 @@ import static com.example.project.Define.CategoryType.SEASON;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.Icon;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -24,6 +27,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.BitmapResource;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.example.project.Define.CategoryType;
@@ -35,6 +39,8 @@ import com.example.project.models.Store;
 import com.example.project.service.Service;
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.io.File;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -46,10 +52,13 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class SearchFragment extends Fragment {
+
+    private static SearchFragment instance;
     private Service service;
     private EditStoreAdapter editStoreAdapter;
-
     private FragmentSearchBinding fragmentSearchBinding;
+
+    // 이벤트 처리를 위한 멤버변수
     private Button searchbutton;
     private TextInputLayout foodNameTextEdit;
     private TextInputLayout foodUrlEdit;
@@ -59,18 +68,20 @@ public class SearchFragment extends Fragment {
     private Button deleteBtn;
     private HashMap<CategoryType, CheckBox> checkBoxHashMap;
 
-
-
     // 현재 상황 설정
-    boolean editMode = false;
-    boolean postMode = false;
-    boolean updateMode = false;
-
+    private boolean editMode = false;
+    private boolean postMode = false;
+    private boolean updateMode = false;
     private Food tempfood;
 
+    private SearchFragment() {
+    }
 
-    public SearchFragment() {
-
+    public static SearchFragment getInstance() {
+        if(instance == null){
+            instance = new SearchFragment();
+        }
+        return instance;
     }
 
     /**
@@ -188,12 +199,21 @@ public class SearchFragment extends Fragment {
      * url 이미지 드로잉
      * @param url
      */
-    private void drawImage(String url) {
-        Glide.with(this)
-                .load(url)
-                .centerCrop()
-                .transform(new CenterCrop(), new RoundedCorners(10))
-                .into(urlimageView);
+    private void drawImage(Object url) {
+            Glide.with(this)
+                    .load(url)
+                    .centerCrop()
+                    .transform(new CenterCrop(), new RoundedCorners(10))
+                    .into(urlimageView);
+
+            if(urlimageView.getDrawable() == null){
+                Glide.with(this)
+                        .load(R.drawable.ic_baseline_fastfood_24)
+                        .centerCrop()
+                        .transform(new CenterCrop(), new RoundedCorners(10))
+                        .into(urlimageView);
+                Toast.makeText(getContext(), "올바른 이미지 주소가 아닙니다ㅁㄴ", Toast.LENGTH_SHORT).show();
+            }
     }
 
     /**

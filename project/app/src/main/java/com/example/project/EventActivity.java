@@ -15,9 +15,20 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 public class EventActivity extends AppCompatActivity{
+    private static EventActivity instance;
     private ImageView randomMuchineImg;
     private ImageView radomballImg;
     private EventActivity context;
+
+    public EventActivity() {
+    }
+
+    public static EventActivity newInstance() {
+        if(instance == null){
+            instance = new EventActivity();
+        }
+        return instance;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
