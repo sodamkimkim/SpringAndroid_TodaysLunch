@@ -161,9 +161,9 @@ public class CategoryFragment extends Fragment implements View.OnClickListener {
     }
 
 
-    private void buttonEventListener(Button curruntButton) {
+    private void buttonEventListener(Button currentButton) {
         for (Button button : buttons) {
-            if (button == curruntButton) {
+            if (button == currentButton) {
                 continue;
             }
             button.setEnabled(true);

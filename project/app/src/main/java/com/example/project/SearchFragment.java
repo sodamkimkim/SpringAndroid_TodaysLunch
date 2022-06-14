@@ -195,21 +195,21 @@ public class SearchFragment extends Fragment {
      * url 이미지 드로잉
      * @param url
      */
-    private void drawImage(Object url) {
+    private void drawImage(String url) {
             Glide.with(this)
                     .load(url)
                     .centerCrop()
                     .transform(new CenterCrop(), new RoundedCorners(10))
                     .into(urlimageView);
 
-            if(urlimageView.getDrawable() == null){
-                Glide.with(this)
-                        .load(R.drawable.ic_baseline_fastfood_24)
-                        .centerCrop()
-                        .transform(new CenterCrop(), new RoundedCorners(10))
-                        .into(urlimageView);
-                Toast.makeText(getContext(), "올바른 이미지 주소가 아닙니다ㅁㄴ", Toast.LENGTH_SHORT).show();
-            }
+//            if(urlimageView.getDrawable() == null){
+//                Glide.with(this)
+//                        .load(R.drawable.ic_baseline_fastfood_24)
+//                        .centerCrop()
+//                        .transform(new CenterCrop(), new RoundedCorners(10))
+//                        .into(urlimageView);
+//                Toast.makeText(getContext(), "올바른 이미지 주소가 아닙니다ㅁㄴ", Toast.LENGTH_SHORT).show();
+//            }
     }
 
     /**
