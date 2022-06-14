@@ -5,8 +5,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.example.project.Fragment1;
-import com.example.project.Fragment2;
+import com.example.project.MainFragment;
+import com.example.project.SelectedByCategoryFragment;
 import com.example.project.Fragment3;
 import com.example.project.MainActivity;
 import com.example.project.SearchFragment;
@@ -26,10 +26,10 @@ public class FragmentAdapter extends FragmentPagerAdapter implements OnMapItemCl
         Fragment fragment = null;
         switch (position) {
             case 0:
-                fragment = new Fragment1();
+                fragment = new MainFragment();
                 break;
             case 1:
-                fragment = new Fragment2();
+                fragment = new SelectedByCategoryFragment();
                 break;
             case 2:
                 fragment = new Fragment3(this);

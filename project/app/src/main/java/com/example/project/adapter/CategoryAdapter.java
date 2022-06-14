@@ -46,8 +46,6 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-    // BindViewHolder(화면과 연결)
-    // data mapping
         Category category = list.get(position);
         Glide.with(context)
                 .load(category.getThumbnail())
@@ -75,10 +73,6 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
             super(itemView);
             categoryTumbnail = itemView.findViewById(R.id.categoryImageView);
             categoryTitle = itemView.findViewById(R.id.titleTextView);
-
-
-
-
         }
     }
 }
