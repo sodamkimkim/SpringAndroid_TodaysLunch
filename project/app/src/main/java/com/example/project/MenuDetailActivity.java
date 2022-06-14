@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -11,6 +13,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.example.project.adapter.StoreAdapter;
 import com.example.project.databinding.ActivityMenuDetailBinding;
+import com.example.project.interfaces.OnIntentCallback;
 import com.example.project.models.Food;
 import com.example.project.models.Store;
 import com.example.project.service.Service;
@@ -23,7 +26,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MenuDetailActivity extends AppCompatActivity {
+public class MenuDetailActivity extends AppCompatActivity implements OnIntentCallback{
 
 
     public static final String PARAM_NAME_1 = "food obj";
@@ -50,6 +53,7 @@ public class MenuDetailActivity extends AppCompatActivity {
         RecyclerView recyclerView = binding.recyclerView4;
         storeAdapter = new StoreAdapter();
         storeAdapter.addItem(stores);
+        storeAdapter.setOnIntentCallback(this);
 
         LinearLayoutManager manager = new LinearLayoutManager(this);
         manager.setOrientation(LinearLayoutManager.HORIZONTAL);
@@ -105,4 +109,9 @@ public class MenuDetailActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void startIntent(String address) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0?q=" + address));
+        startActivity(intent);
+    }
 }

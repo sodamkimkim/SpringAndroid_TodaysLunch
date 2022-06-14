@@ -10,15 +10,15 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.project.Define.CategoryType;
-import com.example.project.databinding.FragmentSelectedbyCategoryBinding;
-import com.example.project.models.Category;
+import com.example.project.databinding.FragmentCategoryBinding;
+
 
 import java.util.ArrayList;
 
 
-public class SelectedByCategoryFragment extends Fragment implements View.OnClickListener {
+public class CategoryFragment extends Fragment implements View.OnClickListener {
 
-    private FragmentSelectedbyCategoryBinding fragmentBinding;
+    private FragmentCategoryBinding fragmentBinding;
 
     private Button btn1AllMenu;
     private Button btn2Rice;
@@ -31,15 +31,15 @@ public class SelectedByCategoryFragment extends Fragment implements View.OnClick
     private Button btn9Seasoned;
 
     private ArrayList<Button> buttons;
-    ChildFragment1 childFragment;
+    CategorizedFoodsFragment childFragment;
 
-    public SelectedByCategoryFragment() {
-        childFragment = ChildFragment1.getInstance();
+    public CategoryFragment() {
+        childFragment = CategorizedFoodsFragment.getInstance();
     }
 
 
-    public static SelectedByCategoryFragment newInstance(String param1, String param2) {
-        SelectedByCategoryFragment fragment = new SelectedByCategoryFragment();
+    public static CategoryFragment newInstance(String param1, String param2) {
+        CategoryFragment fragment = new CategoryFragment();
         return fragment;
     }
 
@@ -53,7 +53,7 @@ public class SelectedByCategoryFragment extends Fragment implements View.OnClick
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        fragmentBinding = FragmentSelectedbyCategoryBinding.inflate(inflater, container, false);
+        fragmentBinding = FragmentCategoryBinding.inflate(inflater, container, false);
         buttons = new ArrayList<>();
 
         btn1AllMenu = fragmentBinding.btn1AllMenu;

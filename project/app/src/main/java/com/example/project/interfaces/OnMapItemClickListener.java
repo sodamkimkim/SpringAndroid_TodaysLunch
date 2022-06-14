@@ -4,6 +4,6 @@ import com.example.project.models.Store;
 
 public interface OnMapItemClickListener {
 
-    void selectedItem(Store store);
+    void selectedItem(String address);
 
 }

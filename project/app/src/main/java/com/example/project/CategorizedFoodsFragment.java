@@ -2,7 +2,6 @@ package com.example.project;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,16 +9,10 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 
-import com.example.project.Define.CategoryType;
 import com.example.project.adapter.FoodAdapter;
-import com.example.project.databinding.FragmentChild1Binding;
-import com.example.project.databinding.FragmentChild2Binding;
-import com.example.project.databinding.FragmentChild3Binding;
-import com.example.project.databinding.FragmentChild4Binding;
-import com.example.project.databinding.FragmentChild5Binding;
+import com.example.project.databinding.FragmentCategorizedfoodsBinding;
 import com.example.project.interfaces.OnFoodItemClickListener;
 import com.example.project.models.Food;
-import com.example.project.models.Store;
 import com.example.project.service.Service;
 
 import java.util.ArrayList;
@@ -30,36 +23,40 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class ChildFragment5 extends Fragment implements OnFoodItemClickListener {
-
-    private FragmentChild5Binding fragmentChild5Binding;
+public class CategorizedFoodsFragment extends Fragment implements OnFoodItemClickListener {
+    private static CategorizedFoodsFragment instance;
+    private FragmentCategorizedfoodsBinding fragmentBinding;
     private FoodAdapter foodAdapter;
     private Service service;
     ArrayList<Food> foods;
 
-    public ChildFragment5() {
-        // Required empty public constructor
+    private String category;
+
+    private CategorizedFoodsFragment() {
+        service = Service.retrofit.create(Service.class);
     }
 
-    public static ChildFragment5 newInstance() {
-        ChildFragment5 fragment = new ChildFragment5();
-        return fragment;
+    public static CategorizedFoodsFragment getInstance() {
+        if(instance == null){
+            instance = new CategorizedFoodsFragment();
+        }
+        return instance;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        service = Service.retrofit.create(Service.class);
+
         foods = new ArrayList<Food>();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        fragmentChild5Binding = FragmentChild5Binding.inflate(inflater, container, false);
+        fragmentBinding = FragmentCategorizedfoodsBinding.inflate(inflater, container, false);
         setupRecyclerView(foods);
 
-        return fragmentChild5Binding.getRoot();
+        return fragmentBinding.getRoot();
     }
 
     private void setupRecyclerView(ArrayList<Food> foods) {
@@ -68,15 +65,28 @@ public class ChildFragment5 extends Fragment implements OnFoodItemClickListener 
         foodAdapter.setOnFoodItemClickListener(this);
 
         GridLayoutManager manager = new GridLayoutManager(getActivity(), 2);
-        fragmentChild5Binding.recyclerView2.setAdapter(foodAdapter);
-        fragmentChild5Binding.recyclerView2.setLayoutManager(manager);
-        fragmentChild5Binding.recyclerView2.hasFixedSize();
+        fragmentBinding.recyclerView2.setAdapter(foodAdapter);
+        fragmentBinding.recyclerView2.setLayoutManager(manager);
+        fragmentBinding.recyclerView2.hasFixedSize();
 
-        requestFoodsData();
+        requestFoodsData("");
     }
 
-    private void requestFoodsData() {
-        service.getCategoryFoods("BUNSIG").enqueue(new Callback<List<Food>>() {
+    public void requestFoodsData(String category) {
+        switch (category){
+            case "":
+                loadFullFoods();
+                break;
+            default:
+                loadCategoryFoods(category);
+                break;
+        }
+
+
+    }
+
+    private void loadFullFoods(){
+        service.getFoods().enqueue(new Callback<List<Food>>() {
             @Override
             public void onResponse(Call<List<Food>> call, Response<List<Food>> response) {
 
@@ -95,10 +105,30 @@ public class ChildFragment5 extends Fragment implements OnFoodItemClickListener 
 
             @Override
             public void onFailure(Call<List<Food>> call, Throwable t) {
-
             }
+        });
+    }
 
+    private void loadCategoryFoods(String category){
+        service.getCategoryFoods(category).enqueue(new Callback<List<Food>>() {
+            @Override
+            public void onResponse(Call<List<Food>> call, Response<List<Food>> response) {
 
+                if (response.isSuccessful()) {
+                    foods = new ArrayList<Food>();
+
+                    for (Food food : response.body()) {
+                        Food f = new Food();
+                        f.setFoodName(food.getFoodName());
+                        f.setUrl(food.getUrl());
+                        foods.add(f);
+                    }
+                    foodAdapter.addItem(foods);
+                }
+            }
+            @Override
+            public void onFailure(Call<List<Food>> call, Throwable t) {
+            }
         });
     }
 

@@ -1,19 +1,22 @@
 package com.example.project.adapter;
 
+import android.content.Intent;
+import android.net.Uri;
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.example.project.MainFragment;
-import com.example.project.SelectedByCategoryFragment;
-import com.example.project.Fragment3;
+import com.example.project.CategoryFragment;
+import com.example.project.NearestStoreFragment;
 import com.example.project.MainActivity;
 import com.example.project.SearchFragment;
 import com.example.project.interfaces.OnMapItemClickListener;
 import com.example.project.models.Store;
 
-public class FragmentAdapter extends FragmentPagerAdapter implements OnMapItemClickListener {
+public class FragmentAdapter extends FragmentPagerAdapter implements OnMapItemClickListener  {
 
     public FragmentAdapter(@NonNull FragmentManager fm, int behavior) {
         super(fm, behavior);
@@ -29,10 +32,10 @@ public class FragmentAdapter extends FragmentPagerAdapter implements OnMapItemCl
                 fragment = new MainFragment();
                 break;
             case 1:
-                fragment = new SelectedByCategoryFragment();
+                fragment = new CategoryFragment();
                 break;
             case 2:
-                fragment = new Fragment3(this);
+                fragment = new NearestStoreFragment();
                 break;
             case 3:
                 fragment = SearchFragment.getInstance();
@@ -47,8 +50,10 @@ public class FragmentAdapter extends FragmentPagerAdapter implements OnMapItemCl
         return MainActivity.TAB_COUNT;
     }
 
+
+
     @Override
-    public void selectedItem(Store store) {
+    public void selectedItem(String address) {
 
     }
 }

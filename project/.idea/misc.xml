@@ -78,12 +78,15 @@
         <entry key="..\:/Users/theka/OneDrive/Desktop/git_main/teamc_Project_SpringAndroid/project/app/src/main/res/layout/fragment_child9.xml" value="0.37530266343825663" />
         <entry key="..\:/Users/theka/OneDrive/Desktop/git_main/teamc_Project_SpringAndroid/project/app/src/main/res/layout/fragment_search.xml" value="0.2574074074074074" />
         <entry key="..\:/Users/theka/OneDrive/Desktop/git_main/teamc_Project_SpringAndroid/project/app/src/main/res/layout/itme_store_edit.xml" value="0.2574074074074074" />
+        <entry key="..\:/ourproject/teamc_Project_SpringAndroid/project/app/src/main/res/drawable/btn_disable.xml" value="0.1515" />
+        <entry key="..\:/ourproject/teamc_Project_SpringAndroid/project/app/src/main/res/drawable/btn_normal.xml" value="0.1515" />
         <entry key="..\:/ourproject/teamc_Project_SpringAndroid/project/app/src/main/res/drawable/categorybackground.xml" value="0.1835" />
         <entry key="..\:/ourproject/teamc_Project_SpringAndroid/project/app/src/main/res/drawable/random.xml" value="0.1235" />
         <entry key="..\:/ourproject/teamc_Project_SpringAndroid/project/app/src/main/res/layout/activity_detail.xml" value="0.3359375" />
         <entry key="..\:/ourproject/teamc_Project_SpringAndroid/project/app/src/main/res/layout/activity_event.xml" value="0.2906026557711951" />
         <entry key="..\:/ourproject/teamc_Project_SpringAndroid/project/app/src/main/res/layout/activity_intro.xml" value="0.3359375" />
         <entry key="..\:/ourproject/teamc_Project_SpringAndroid/project/app/src/main/res/layout/activity_main.xml" value="0.3359375" />
+        <entry key="..\:/ourproject/teamc_Project_SpringAndroid/project/app/src/main/res/layout/activity_store_map.xml" value="0.1375" />
         <entry key="..\:/ourproject/teamc_Project_SpringAndroid/project/app/src/main/res/layout/edit_store_item.xml" value="0.31875" />
         <entry key="..\:/ourproject/teamc_Project_SpringAndroid/project/app/src/main/res/layout/fragment_1.xml" value="0.3359375" />
         <entry key="..\:/ourproject/teamc_Project_SpringAndroid/project/app/src/main/res/layout/fragment_2.xml" value="0.3359375" />
@@ -91,6 +94,7 @@
         <entry key="..\:/ourproject/teamc_Project_SpringAndroid/project/app/src/main/res/layout/fragment_4.xml" value="0.3359375" />
         <entry key="..\:/ourproject/teamc_Project_SpringAndroid/project/app/src/main/res/layout/fragment_back_ground.xml" value="0.3359375" />
         <entry key="..\:/ourproject/teamc_Project_SpringAndroid/project/app/src/main/res/layout/fragment_backgound.xml" value="0.3359375" />
+        <entry key="..\:/ourproject/teamc_Project_SpringAndroid/project/app/src/main/res/layout/fragment_categorizedfoods.xml" value="0.1375" />
         <entry key="..\:/ourproject/teamc_Project_SpringAndroid/project/app/src/main/res/layout/fragment_child1.xml" value="0.3359375" />
         <entry key="..\:/ourproject/teamc_Project_SpringAndroid/project/app/src/main/res/layout/fragment_child2.xml" value="0.3359375" />
         <entry key="..\:/ourproject/teamc_Project_SpringAndroid/project/app/src/main/res/layout/fragment_child3.xml" value="0.3359375" />

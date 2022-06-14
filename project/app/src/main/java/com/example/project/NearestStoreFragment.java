@@ -5,21 +5,16 @@ import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.project.adapter.CategoryAdapter;
 import com.example.project.adapter.StoreAdapter;
-import com.example.project.databinding.Fragment3Binding;
-import com.example.project.interfaces.OnCategoryItemClickListener;
+import com.example.project.databinding.FragmentNeareststoreBinding;
+import com.example.project.interfaces.OnIntentCallback;
 import com.example.project.interfaces.OnMapItemClickListener;
-import com.example.project.models.Category;
 import com.example.project.models.Store;
 import com.example.project.service.Service;
 
@@ -31,20 +26,14 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class Fragment3 extends Fragment implements OnMapItemClickListener {
-    private Fragment3Binding fragment3Binding;
+public class NearestStoreFragment extends Fragment implements OnMapItemClickListener {
+    private FragmentNeareststoreBinding fragmentBinding;
     private StoreAdapter storeAdapter;
     private Service service;
     ArrayList<Store> stores;
 
     private int limit = 29;
     private OnMapItemClickListener onMapItemClickListener;
-
-
-    public Fragment3(OnMapItemClickListener onMapItemClickListener) {
-        this.onMapItemClickListener = onMapItemClickListener;
-    }
-
 
 
     @Override
@@ -57,12 +46,11 @@ public class Fragment3 extends Fragment implements OnMapItemClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        fragment3Binding = Fragment3Binding.inflate(inflater, container, false);
+        fragmentBinding = fragmentBinding.inflate(inflater, container, false);
         setupRecyclerView(stores);
 
-        return fragment3Binding.getRoot();
+        return fragmentBinding.getRoot();
     }
-
 
 
     private void requestStoresData() {
@@ -70,10 +58,10 @@ public class Fragment3 extends Fragment implements OnMapItemClickListener {
             @Override
             public void onResponse(Call<List<Store>> call, Response<List<Store>> response) {
 
-                if(response.isSuccessful()) {
+                if (response.isSuccessful()) {
                     stores = new ArrayList<Store>();
 
-                    for (Store store: response.body()) {
+                    for (Store store : response.body()) {
                         Store s = new Store();
                         s.setStoreName(store.getStoreName());
                         s.setImgurl(store.getImgurl());
@@ -101,9 +89,9 @@ public class Fragment3 extends Fragment implements OnMapItemClickListener {
 
         LinearLayoutManager manager = new LinearLayoutManager(getContext());
 
-        fragment3Binding.recyclerView3.setAdapter(storeAdapter);
-        fragment3Binding.recyclerView3.setLayoutManager(manager);
-        fragment3Binding.recyclerView3.hasFixedSize();
+        fragmentBinding.recyclerView3.setAdapter(storeAdapter);
+        fragmentBinding.recyclerView3.setLayoutManager(manager);
+        fragmentBinding.recyclerView3.hasFixedSize();
 
         requestStoresData();
 
@@ -111,9 +99,8 @@ public class Fragment3 extends Fragment implements OnMapItemClickListener {
 
 
     @Override
-    public void selectedItem(Store store) {
-//        https://imleaf.tistory.com/16
-        Intent intent = new Intent(Intent.ACTION_VIEW,Uri.parse("geo:0,0?q=" + store.getAddress()));
+    public void selectedItem(String addresss) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0?q=" + addresss));
         startActivity(intent);
     }
 }

@@ -1,5 +1,7 @@
 package com.example.project;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -13,6 +15,7 @@ import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.example.project.adapter.StoreAdapter;
 import com.example.project.databinding.ActivityAppRecommendationDetailBinding;
 
+import com.example.project.interfaces.OnIntentCallback;
 import com.example.project.models.Food;
 import com.example.project.models.Store;
 import com.example.project.service.Service;
@@ -27,7 +30,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 // 데이터 전달받아서 화면 구성
-public class AppRecommendationDetailActivity extends AppCompatActivity {
+public class AppRecommendationDetailActivity extends AppCompatActivity implements OnIntentCallback {
 
     private ActivityAppRecommendationDetailBinding binding;
     private Service service;
@@ -45,6 +48,7 @@ public class AppRecommendationDetailActivity extends AppCompatActivity {
         RecyclerView recyclerView = binding.recyclerView4;
         storeAdapter = new StoreAdapter();
         storeAdapter.addItem(stores);
+        storeAdapter.setOnIntentCallback(this);
 
         LinearLayoutManager manager = new LinearLayoutManager(this);
         manager.setOrientation(LinearLayoutManager.HORIZONTAL);
@@ -98,8 +102,11 @@ public class AppRecommendationDetailActivity extends AppCompatActivity {
             }
         });
         storeAdapter.addItem(stores);
-
     }
 
-
+    @Override
+    public void startIntent(String address) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0?q=" + address));
+        startActivity(intent);
+    }
 }

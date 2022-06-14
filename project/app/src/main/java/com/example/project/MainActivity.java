@@ -7,11 +7,14 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
 import com.example.project.adapter.FragmentAdapter;
+import com.example.project.adapter.StoreAdapter;
+import com.example.project.interfaces.OnIntentCallback;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
@@ -33,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         backPress = new BackPressCloseHandler(this);
-
         init();
         addTab();
         addEventListener();
@@ -94,6 +96,5 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
-
 
 }
