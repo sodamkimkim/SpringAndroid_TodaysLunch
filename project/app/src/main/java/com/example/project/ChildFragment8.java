@@ -35,14 +35,10 @@ import retrofit2.Response;
 
 public class ChildFragment8 extends Fragment implements OnFoodItemClickListener {
 
-    private static final String TAG = "TAG";
     private FragmentChild8Binding fragmentChild8Binding;
     private FoodAdapter foodAdapter;
     private Service service;
     ArrayList<Food> foods;
-    CategoryType categoryType;
-
-    private OnFoodItemClickListener onFoodItemClickListener;
 
     public ChildFragment8() {
         // Required empty public constructor
@@ -98,7 +94,6 @@ public class ChildFragment8 extends Fragment implements OnFoodItemClickListener 
                     }
                     foodAdapter.addItem(foods);
                 }
-                Log.d(TAG, foods.toString());
             }
 
             @Override

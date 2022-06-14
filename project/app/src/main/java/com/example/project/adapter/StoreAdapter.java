@@ -42,22 +42,13 @@ public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.MyViewHolder
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View itemView = inflater.inflate(R.layout.store, parent, false);
-        Log.d("TAG", "내가 호출해져야 됨 난 크리에트뷰야" + list.toString());
         return new MyViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(@NonNull StoreAdapter.MyViewHolder holder, int position) {
         Store store = list.get(position);
-
-        // 삭제 plz
-        Log.d("TAG", "내가 호출해져야 됨 " + store.toString());
-
         holder.drawStoreList(store);
-        holder.itemView.setOnClickListener(view -> {
-            onMapItemClickListener.selectedItem(store);
-        });
-
     }
 
     @Override

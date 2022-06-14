@@ -1,6 +1,7 @@
 package com.example.project;
 
 import android.app.Activity;
+import android.util.Log;
 import android.widget.Toast;
 
 public class BackPressCloseHandler {
@@ -20,16 +21,17 @@ public class BackPressCloseHandler {
                 showGuide();
                 return;
             }
+
             if (System.currentTimeMillis() <= backKeyPressedTime + 2000) {
-                activity.finish();
                 toast.cancel();
+                activity.finish();
             }
 
         }
 
 
         private void showGuide() {
-            toast = Toast.makeText(activity, "뒤로 가기 버튼을 한 번더 누르면 종료됩니다", Toast.LENGTH_SHORT);
+            toast = Toast.makeText(activity, "뒤로 가기 버튼을 한 번 더 누르면 종료됩니다", Toast.LENGTH_SHORT);
             toast.show();
 
         }

@@ -29,7 +29,6 @@ public class CategoryRandomMenuDetailActivity extends AppCompatActivity {
     private Service service;
     private ArrayList<Store> stores;
     StoreAdapter storeAdapter;
-    String TAG = "TAG";
     public static final String PARAM_NAME = "category";
     private String category;
 
@@ -58,8 +57,6 @@ public class CategoryRandomMenuDetailActivity extends AppCompatActivity {
     }
 
     private void requestCategoryData() {
-        Log.d(TAG, PARAM_NAME);
-        Log.d(TAG, "requestCategoryData: " + stores.toString());
             service.getRandomCategoryFood(category).enqueue(new Callback<Food>() {
             @Override
             public void onResponse(Call<Food> call, Response<Food> response) {
@@ -73,7 +70,7 @@ public class CategoryRandomMenuDetailActivity extends AppCompatActivity {
             }
             @Override
             public void onFailure(Call<Food> call, Throwable t) {
-                Log.d(TAG, "통신 실패");
+
             }
         });
         setContentView(binding.getRoot());
@@ -100,7 +97,6 @@ public class CategoryRandomMenuDetailActivity extends AppCompatActivity {
             }
         });
         storeAdapter.addItem(stores);
-        Log.d(TAG, "templist: "+stores.toString());
 
     }
 

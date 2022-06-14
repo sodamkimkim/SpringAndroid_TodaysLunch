@@ -49,13 +49,12 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.MyViewHolder>{
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        // BindViewHolder(화면과 연결)
-        // data mapping
+
         Food food = list.get(position);
         holder.drawFoodList(food);
         holder.itemView.setOnClickListener(view->{
          onFoodItemClickListener.onItemClicked(food);
-         //아이템뷰 클릭 콜백
+
         });
 
     }
@@ -64,9 +63,7 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.MyViewHolder>{
     public int getItemCount() {
         return list.size();    }
 
-    // 내부클래스
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        //findviewbyid재활용해서 사용하기 위해서 만든 viewHolder
         private View view;
         private ImageView foodImageView;
         private TextView foodTextView;

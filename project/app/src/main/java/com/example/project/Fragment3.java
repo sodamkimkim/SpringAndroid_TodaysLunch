@@ -32,7 +32,6 @@ import retrofit2.Response;
 
 
 public class Fragment3 extends Fragment implements OnMapItemClickListener {
-    private static final String TAG = "TAG";
     private Fragment3Binding fragment3Binding;
     private StoreAdapter storeAdapter;
     private Service service;
@@ -48,12 +47,6 @@ public class Fragment3 extends Fragment implements OnMapItemClickListener {
 
 
 
-
-//    public static Fragment3 getInstance(String param1, String param2) {
-//        Fragment3 fragment = new Fragment3();
-//        return fragment;
-//    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,7 +57,6 @@ public class Fragment3 extends Fragment implements OnMapItemClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-//        StoreAdapter storeAdapter = new StoreAdapter(Store.getStoreData(), getActivity());
         fragment3Binding = Fragment3Binding.inflate(inflater, container, false);
         setupRecyclerView(stores);
 
@@ -91,7 +83,6 @@ public class Fragment3 extends Fragment implements OnMapItemClickListener {
                     }
                     storeAdapter.addItem(stores);
                 }
-                Log.d(TAG, stores.toString());
             }
 
             @Override

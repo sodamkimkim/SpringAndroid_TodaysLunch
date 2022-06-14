@@ -29,7 +29,6 @@ import retrofit2.Response;
 
 public class ChildFragment2 extends Fragment implements OnFoodItemClickListener {
 
-    private static final String TAG = "TAG";
     private FragmentChild2Binding fragmentChild2Binding;
     private FoodAdapter foodAdapter;
     private Service service;
@@ -92,7 +91,6 @@ public class ChildFragment2 extends Fragment implements OnFoodItemClickListener 
                     }
                     foodAdapter.addItem(foods);
                 }
-                Log.d(TAG, foods.toString());
             }
 
             @Override

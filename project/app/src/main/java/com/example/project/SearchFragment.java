@@ -157,18 +157,15 @@ public class SearchFragment extends Fragment {
         });
 
         foodUrlEdit.setStartIconOnClickListener(view -> {
-            Log.d("TAG", "url 버튼 클릭");
             String url = String.valueOf(fragmentSearchBinding.urlText.getText());
             drawImage(url);
         });
 
         submitBtn.setOnClickListener(view -> {
-            Log.d("TAGS" , "--" + foodName.getText().toString());
             tempfood.setFoodName(foodName.getText().toString());
             tempfood.setCategory(readCategory());
             tempfood.setUrl(fragmentSearchBinding.urlText.getText().toString());
             tempfood.setStorelist(editStoreAdapter.getStores());
-            Log.d("TAGS", tempfood.toString());
 
             if(submitBtn.getText().toString().equals("POST")){
                 postFoodDate(tempfood);
@@ -179,7 +176,6 @@ public class SearchFragment extends Fragment {
         });
 
         deleteBtn.setOnClickListener(view -> {
-            Log.d("TAGS", "deletebtn : "+foodName.getText().toString());
             deleteFoodDate(foodName.getText().toString());
             clearPage();
             alertMessage("DELETE 완료","수정이 완료되었습니다");
@@ -302,7 +298,6 @@ public class SearchFragment extends Fragment {
             public void onResponse(Call<Food> call, Response<Food> response) {
 
                 if (response.isSuccessful()) {
-                    Log.d("TAGS", response.body().toString());
                     Food food = response.body();
                     tempfood = food;
                     writeFoodData(food);

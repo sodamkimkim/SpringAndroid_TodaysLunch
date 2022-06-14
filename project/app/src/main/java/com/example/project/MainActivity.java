@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        backPress = new BackPressCloseHandler(this);
 
         init();
         addTab();
@@ -86,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         int i = tabLayout.getSelectedTabPosition();
         switch (i){
             case 0:
-                finish();
+                backPress.onBackPressed();
                 break;
             default:
                 viewPager.setCurrentItem(i-1);
