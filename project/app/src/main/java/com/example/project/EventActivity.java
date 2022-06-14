@@ -18,6 +18,8 @@ public class EventActivity extends AppCompatActivity{
     private static EventActivity instance;
     private ImageView randomMuchineImg;
     private ImageView radomballImg;
+    private Handler handler;
+
     private EventActivity context;
 
     public EventActivity() {
@@ -44,17 +46,32 @@ public class EventActivity extends AppCompatActivity{
         context = this;
         radomballImg.setVisibility(View.INVISIBLE);
 
+
         /**
          * 여기다가 MainActivity.class 에다가 바꿔 넣을꺼 끼면 됨
          */
-        new Handler().postDelayed(new Runnable() {
+        handler = new Handler(new Handler.Callback() {
             @Override
-            public void run() {
-                Intent intent = new Intent(getApplicationContext(), AppRecommendationDetailActivity.class);
-                startActivity(intent);
-                finish();
+            public boolean handleMessage(@NonNull Message message) {
+                switch (message.what){
+                    case 1:
+                        radomballImg.setVisibility(View.VISIBLE);
+                        break;
+                    case 2:
+                        radomballImg.setImageResource(R.drawable.machineballcrack);
+                        break;
+                    case 3:
+                        radomballImg.setVisibility(View.GONE);
+                        break;
+                    case 4:
+                        Intent intent = new Intent(getApplicationContext(), AppRecommendationDetailActivity.class);
+                        startActivity(intent);
+                        finish();
+                }
+                return true;
             }
-        }, 6500);
+        });
+
 
         Thread thread = new Thread(new Runnable() {
             @Override
@@ -78,11 +95,36 @@ public class EventActivity extends AppCompatActivity{
                         e.printStackTrace();
                     }
                 }
-
+                Message message = handler.obtainMessage();
+                message.what = 1;
+                handler.sendMessage(message);
                 Animation slideAnimation = AnimationUtils
                         .loadAnimation(context, R.anim.translate_anim);
-
                 radomballImg.startAnimation(slideAnimation);
+                try {
+                    Thread.sleep(1200);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                message = handler.obtainMessage();
+                message.what = 2;
+                handler.sendMessage(message);
+                try {
+                    Thread.sleep(250);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                message = handler.obtainMessage();
+                message.what = 3;
+                handler.sendMessage(message);
+                try {
+                    Thread.sleep(50);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                message = handler.obtainMessage();
+                message.what = 4;
+                handler.sendMessage(message);
             }
         });
         thread.start();
