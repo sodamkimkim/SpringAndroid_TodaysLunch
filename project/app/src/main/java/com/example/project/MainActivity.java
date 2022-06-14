@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private FragmentAdapter adapter;
+    private BackPressCloseHandler backPress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,5 +79,20 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
     }
+
+    @Override
+    public void onBackPressed() {
+
+        int i = tabLayout.getSelectedTabPosition();
+        switch (i){
+            case 0:
+                finish();
+                break;
+            default:
+                viewPager.setCurrentItem(i-1);
+        }
+
+    }
+
 
 }
