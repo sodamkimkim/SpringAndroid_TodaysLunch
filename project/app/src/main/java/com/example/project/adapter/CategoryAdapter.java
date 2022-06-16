@@ -25,6 +25,7 @@ import java.util.ArrayList;
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyViewHolder>{
     ArrayList<Category> list;
+
     Context context;
     OnCategoryItemClickListener onCategoryItemClickListener;
 

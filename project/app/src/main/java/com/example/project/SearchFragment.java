@@ -54,7 +54,7 @@ import retrofit2.Response;
 public class SearchFragment extends Fragment {
 
     private static SearchFragment instance;
-    private Service service;
+
     private EditStoreAdapter editStoreAdapter;
     private FragmentSearchBinding fragmentSearchBinding;
 
@@ -72,6 +72,9 @@ public class SearchFragment extends Fragment {
     private boolean editMode = false;
     private boolean postMode = false;
     private boolean updateMode = false;
+
+    // 얘들을 가지고 있지 않게 만들어 보자
+    private Service service;
     private Food tempfood;
 
     private SearchFragment() {
@@ -122,8 +125,6 @@ public class SearchFragment extends Fragment {
         submitBtn = fragmentSearchBinding.submitbtn;
         deleteBtn = fragmentSearchBinding.deletbtn;
         foodName = fragmentSearchBinding.searchFoodName;
-
-
 
         checkBoxHashMap = new HashMap<CategoryType, CheckBox>();
         checkBoxHashMap.put(RICE, fragmentSearchBinding.checkRice);
@@ -201,15 +202,6 @@ public class SearchFragment extends Fragment {
                     .centerCrop()
                     .transform(new CenterCrop(), new RoundedCorners(10))
                     .into(urlimageView);
-
-//            if(urlimageView.getDrawable() == null){
-//                Glide.with(this)
-//                        .load(R.drawable.ic_baseline_fastfood_24)
-//                        .centerCrop()
-//                        .transform(new CenterCrop(), new RoundedCorners(10))
-//                        .into(urlimageView);
-//                Toast.makeText(getContext(), "올바른 이미지 주소가 아닙니다ㅁㄴ", Toast.LENGTH_SHORT).show();
-//            }
     }
 
     /**

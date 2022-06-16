@@ -33,8 +33,11 @@ import retrofit2.Response;
 public class AppRecommendationDetailActivity extends AppCompatActivity implements OnIntentCallback {
 
     private ActivityAppRecommendationDetailBinding binding;
+    
+    // 얘둘을 가지고 있지 않게 만들어 보자
     private Service service;
     private ArrayList<Store> stores;
+    
     StoreAdapter storeAdapter;
 
 

@@ -19,6 +19,8 @@ import java.util.List;
 
 public class EditStoreAdapter extends RecyclerView.Adapter<EditStoreAdapter.ViewHolder> {
 
+
+    // ListStores 을 가지지 않도록 만들어 보자
     private List<Store> stores = new ArrayList<Store>();
     private static int BOX_ID = 0;
 

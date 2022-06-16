@@ -9,8 +9,6 @@ public class Store {
     private String address;
     private String imgurl;
     private int distance;
-    private double latitude;
-    private double longitude;
 
     public Store(){
 
@@ -21,21 +19,6 @@ public class Store {
         this.address = address;
         this.imgurl = imgurl;
         this.distance = distance;
-        this.latitude = latitude;
-        this.longitude = longitude;
-    }
-
-    @Override
-    public String toString() {
-        return "Store{" +
-                "id=" + id +
-                ", storeName='" + storeName + '\'' +
-                ", address='" + address + '\'' +
-                ", imgurl='" + imgurl + '\'' +
-                ", distance=" + distance +
-                ", latitude=" + latitude +
-                ", longitude=" + longitude +
-                '}';
     }
 
     public int getId() {
@@ -78,19 +61,4 @@ public class Store {
         this.distance = distance;
     }
 
-    public double getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(double latitude) {
-        this.latitude = latitude;
-    }
-
-    public double getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(double longitude) {
-        this.longitude = longitude;
-    }
 }

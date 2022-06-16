@@ -27,10 +27,6 @@
             android:value="AIzaSyARz0wWHimm7uGAOBgX5SgIwQJujN_ySn0" />
 
         <activity
-            android:name=".StoreMapActivity"
-            android:exported="true" />
-
-        <activity
             android:name=".EventActivity"
             android:exported="true"/>
 

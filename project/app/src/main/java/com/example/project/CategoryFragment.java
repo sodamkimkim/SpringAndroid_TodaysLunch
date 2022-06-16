@@ -86,7 +86,6 @@ public class CategoryFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-
         switch (v.getId()) {
             case R.id.btn1AllMenu:
                 fragmentBinding.btn1AllMenu.setEnabled(false);
@@ -141,8 +140,9 @@ public class CategoryFragment extends Fragment implements View.OnClickListener {
                 buttonEventListener(fragmentBinding.btn9Seasoned);
                 childFragment.requestFoodsData(CategoryType.SEASON.toString());
                 break;
-
         }
+        ;
+
     }
 
     private void setChildFragment(Fragment childFragment) {
@@ -150,7 +150,6 @@ public class CategoryFragment extends Fragment implements View.OnClickListener {
         childFragmentTransaction.replace(R.id.childFragmentContainer, childFragment);
         childFragmentTransaction.addToBackStack(null);
         childFragmentTransaction.commit();
-
     }
 
 
@@ -167,8 +166,6 @@ public class CategoryFragment extends Fragment implements View.OnClickListener {
                 continue;
             }
             button.setEnabled(true);
-
-
         }
     }
 
