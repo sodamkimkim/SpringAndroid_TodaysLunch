@@ -21,23 +21,26 @@ Android Studio, Gradle, retrofit2(http 메세지를 주고받기 위한), matria
 ## 화면 구성
 ### 시작화면
 ![시작화면](https://user-images.githubusercontent.com/99931188/181199060-5e9a9bb9-ae46-4d77-91fd-3d72009e1d8e.jpg)
+
 ### 메인화면
 ![메인화면](https://user-images.githubusercontent.com/99931188/181199313-4b13a9cc-8bd3-4584-b0b6-cdf480e11981.jpg)
 - 메뉴 탭 구성 
+
 ![탭 구성](https://user-images.githubusercontent.com/99931188/181200477-a404c485-539c-4bf8-8426-7a9c18656bbf.jpg)
 
-
 - 랜덤 뽑기 이벤트
-> 공 섞는 애니메이션
-> ![image](https://user-images.githubusercontent.com/99931188/181199625-56ae50c0-904b-446e-b87d-6d36c9d3c0ea.png)
+공 섞는 애니메이션
+<
+![image](https://user-images.githubusercontent.com/99931188/181199625-56ae50c0-904b-446e-b87d-6d36c9d3c0ea.png)
 
-> 공 뽑이는 애니메이션
-> ![image](https://user-images.githubusercontent.com/99931188/181199896-b5fa1e69-baa5-47eb-bd90-a652742fd6eb.png)
-> ![image](https://user-images.githubusercontent.com/99931188/181199980-c1d31869-9ec1-4258-8886-65bbecf53495.png)
+- 공 뽑이는 애니메이션
+
+![image](https://user-images.githubusercontent.com/99931188/181199896-b5fa1e69-baa5-47eb-bd90-a652742fd6eb.png)
+![image](https://user-images.githubusercontent.com/99931188/181199980-c1d31869-9ec1-4258-8886-65bbecf53495.png)
 
 - 랜덤 메뉴 추천
-![메뉴 추천1](https://user-images.githubusercontent.com/99931188/181200066-f1b67a0e-cbe5-4c30-a63c-6a74a6682864.jpg)
-![메뉴 추천2](https://user-images.githubusercontent.com/99931188/181200081-a7a11fcb-0667-4ad6-a4e1-6101019c99a6.jpg)
+<img src="https://user-images.githubusercontent.com/99931188/181200081-a7a11fcb-0667-4ad6-a4e1-6101019c99a6.jpg" width="200" height="400"/>
+<img src="https://user-images.githubusercontent.com/99931188/181200081-a7a11fcb-0667-4ad6-a4e1-6101019c99a6.jpg" width="200" height="400"/>
 
 - 메장 클릭시 구글 맵 화면 띄움
 ![Screenshot_12](https://user-images.githubusercontent.com/99931188/181201455-370f3779-d7a1-452e-a554-06b6cc4c951c.jpg)
