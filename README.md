@@ -39,8 +39,8 @@ Android Studio, Gradle, retrofit2(http 메세지를 주고받기 위한), matria
 ![image](https://user-images.githubusercontent.com/99931188/181199980-c1d31869-9ec1-4258-8886-65bbecf53495.png)
 
 - 랜덤 메뉴 추천
-<img src="https://user-images.githubusercontent.com/99931188/181200081-a7a11fcb-0667-4ad6-a4e1-6101019c99a6.jpg" width="200" height="400"/>
-<img src="https://user-images.githubusercontent.com/99931188/181200081-a7a11fcb-0667-4ad6-a4e1-6101019c99a6.jpg" width="200" height="400"/>
+<img src="https://user-images.githubusercontent.com/99931188/181200081-a7a11fcb-0667-4ad6-a4e1-6101019c99a6.jpg" width="100" height="100"/>
+<img src="https://user-images.githubusercontent.com/99931188/181200081-a7a11fcb-0667-4ad6-a4e1-6101019c99a6.jpg" width="100" height="100"/>
 
 - 메장 클릭시 구글 맵 화면 띄움
 ![Screenshot_12](https://user-images.githubusercontent.com/99931188/181201455-370f3779-d7a1-452e-a554-06b6cc4c951c.jpg)
