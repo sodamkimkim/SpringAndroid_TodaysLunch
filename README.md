@@ -24,11 +24,13 @@ Android Studio, Gradle, retrofit2(http 메세지를 주고받기 위한), matria
 
 ### 메인화면
 ![메인화면](https://user-images.githubusercontent.com/99931188/181199313-4b13a9cc-8bd3-4584-b0b6-cdf480e11981.jpg)
-- 메뉴 탭 구성 
+
+
+### 메뉴 탭 구성 
 ![탭 구성](https://user-images.githubusercontent.com/99931188/181200477-a404c485-539c-4bf8-8426-7a9c18656bbf.jpg)
 
 
-- 랜덤 뽑기 이벤트
+### 랜덤 뽑기 이벤트
 1. 공 섞는 애니메이션
 <img src="https://user-images.githubusercontent.com/99931188/181199625-56ae50c0-904b-446e-b87d-6d36c9d3c0ea.png" width="200" height="200"/>
 
