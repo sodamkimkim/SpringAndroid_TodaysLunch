@@ -31,7 +31,6 @@ Android Studio, Gradle, retrofit2(http 메세지를 주고받기 위한), materi
 
 
 ### <랜덤 뽑기 이벤트>
-1. 공 섞는 애니메이션
 ![뽑기 이벤트](https://user-images.githubusercontent.com/99931188/181457911-738c1b33-6fab-44d4-80c5-810af2faaabb.gif)
 
 
