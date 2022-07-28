@@ -55,14 +55,14 @@ Android Studio, Gradle, retrofit2(http 메세지를 주고받기 위한), matria
 ![Screenshot_10](https://user-images.githubusercontent.com/99931188/181200404-31f9afd4-ecdc-48ff-a3f0-76d0ada23c8a.jpg)
 
 ### 메뉴 수정, 삭제
-- 화면
+- 화면<br/>
 ![Screenshot_11](https://user-images.githubusercontent.com/99931188/181200632-794cc819-2ce5-49b5-a828-b33e2b2a8d2c.jpg)
 
-- 메뉴 검색시 메뉴에 해당하는 데이터 내려받음
+- 메뉴 검색시 메뉴에 해당하는 데이터 내려받음<br/>
 ![Screenshot_13](https://user-images.githubusercontent.com/99931188/181201075-95f21e9d-c11d-4cbc-b11b-fa4c78422223.jpg)
-- 수정
+- 수정<br/>
 ![Screenshot_14](https://user-images.githubusercontent.com/99931188/181201338-baaf4c13-3ebf-4f8a-ba8c-3dd90a07231f.jpg)
-- 삭제
+- 삭제<br/>
 ![삭제후](https://user-images.githubusercontent.com/99931188/181201397-2b0d493f-be84-4754-9be2-b76893b02010.jpg)
 
 
