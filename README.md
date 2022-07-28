@@ -38,20 +38,20 @@ Android Studio, Gradle, retrofit2(http 메세지를 주고받기 위한), matria
 <img src="https://user-images.githubusercontent.com/99931188/181199896-b5fa1e69-baa5-47eb-bd90-a652742fd6eb.png" width="200" height="200"/>
 <img src="https://user-images.githubusercontent.com/99931188/181199980-c1d31869-9ec1-4258-8886-65bbecf53495.png" width="200" height="200"/>
 
-3. 랜덤 메뉴 추천
+3. 랜덤 메뉴 추천<br/>
 ![Screenshot_3](https://user-images.githubusercontent.com/99931188/181203092-0f1c4156-42a2-44cb-ae3b-513596fac5b9.jpg)
 ![Screenshot_4](https://user-images.githubusercontent.com/99931188/181203109-f70f4ad8-b897-49e4-921a-16b50b6c963f.jpg)
 
-- 메장 클릭시 구글 맵 화면 띄움
+- 메장 클릭시 구글 맵 화면 띄움<br/>
 ![Screenshot_12](https://user-images.githubusercontent.com/99931188/181201455-370f3779-d7a1-452e-a554-06b6cc4c951c.jpg)
 
 
-### 카테고리별 메뉴 화면
+### 카테고리별 메뉴 화면<br/>
 ![Screenshot_5](https://user-images.githubusercontent.com/99931188/181200236-c73a1cca-77d8-4d13-a2a0-eaa2171c58db.jpg)
 ![Screenshot_6](https://user-images.githubusercontent.com/99931188/181200276-6161a757-d578-4c5c-b770-dae09b793bfb.jpg)
 ![Screenshot_7](https://user-images.githubusercontent.com/99931188/181200307-6f83c2dd-453e-4177-8be8-6cd372862207.jpg)
 
-### 가까운 매장 추천
+### 가까운 매장 추천<br/>
 ![Screenshot_10](https://user-images.githubusercontent.com/99931188/181200404-31f9afd4-ecdc-48ff-a3f0-76d0ada23c8a.jpg)
 
 ### 메뉴 수정, 삭제
