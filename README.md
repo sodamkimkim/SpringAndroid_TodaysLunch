@@ -14,7 +14,7 @@
 4. 메뉴 추가, 수정, 삭제
 
 ## 사용 기술
-Android Studio, Gradle, retrofit2(http 메세지를 주고받기 위한), matrial 디자인 
+Android Studio, Gradle, retrofit2(http 메세지를 주고받기 위한), material 디자인 
 ## 작업 기간
 2022.06.09~2022.06.14 (약 5일)
 ----
