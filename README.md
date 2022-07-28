@@ -34,7 +34,7 @@ Android Studio, Gradle, retrofit2(http 메세지를 주고받기 위한), matria
 1. 공 섞는 애니메이션
 <img src="https://user-images.githubusercontent.com/99931188/181199625-56ae50c0-904b-446e-b87d-6d36c9d3c0ea.png" width="200" height="200"/>
 
-2.공 뽑이는 애니메이션
+2.공 뽑히는 애니메이션<br/>
 <img src="https://user-images.githubusercontent.com/99931188/181199896-b5fa1e69-baa5-47eb-bd90-a652742fd6eb.png" width="200" height="200"/>
 <img src="https://user-images.githubusercontent.com/99931188/181199980-c1d31869-9ec1-4258-8886-65bbecf53495.png" width="200" height="200"/>
 
